@@ -956,33 +956,147 @@ section { padding: 120px 0; }
   }
 }
 
-/* ── TEAM ── */
-#team { background: var(--surface); }
-
-.practitioner-card {
-  text-align: center;
-  transition: transform .4s cubic-bezier(.4,0,.2,1);
+/* ── TEAM (organic tree + grove) ── */
+.team-tree {
+  position: relative;
+  background: var(--surface);
+  overflow: visible;
 }
 
-.practitioner-card:hover { transform: translateY(-8px); }
+.team-tree .container {
+  position: relative;
+  z-index: 2;
+}
 
-.prac-img-wrap {
-  width: 180px;
-  height: 180px;
+.team-tree-intro {
+  max-width: 36rem;
+  margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.team-tree-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(200px, 1.05fr) minmax(220px, 1fr);
+  gap: 1.25rem 1.75rem;
+  align-items: center;
+  max-width: 1140px;
+  min-height: 420px;
+  margin: 1.75rem auto 0;
+  padding: 0.5rem 0.25rem 2rem;
+  overflow: visible;
+}
+
+.team-tree-canvas-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.team-tree-col {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+.team-tree-col--tree {
+  min-height: 300px;
+}
+
+.team-tree-col--left,
+.team-tree-col--right {
+  padding-top: 0.25rem;
+}
+
+#teamTreeCanvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.team-tree-nodes--stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.team-node {
+  position: relative;
+  text-align: center;
+}
+
+.team-tree-col--left .team-node {
+  padding-right: 0.65rem;
+}
+
+.team-tree-col--right .team-node {
+  padding-left: 0.65rem;
+}
+
+.team-node::before {
+  content: '';
+  position: absolute;
+  top: 1.15rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--leaf-color);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--leaf-color) 22%, transparent);
+  z-index: 2;
+}
+
+.team-tree-col--left .team-node::before {
+  right: 0;
+  left: auto;
+  transform: translate(50%, -50%);
+}
+
+.team-tree-col--right .team-node::before {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.team-tree-col .team-node .practitioner-card {
+  display: block;
+  max-width: 240px;
+  margin: 0 auto;
+  padding-top: 0.15rem;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-node:hover .practitioner-card {
+  transform: translateY(-5px);
+}
+
+.team-tree-col .team-node .prac-img-wrap {
+  position: relative;
+  width: 118px;
+  height: 118px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 auto 1.6rem;
+  margin: 0 auto 1rem;
   border: 2px solid transparent;
-  background: linear-gradient(white, white) padding-box,
-              linear-gradient(135deg, var(--brand), var(--teal)) border-box;
-  transition: box-shadow .4s;
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(145deg, var(--leaf-color), color-mix(in srgb, var(--leaf-color) 45%, var(--primary))) border-box;
+  box-shadow: 0 6px 24px rgba(0, 41, 59, 0.07);
+  transition: box-shadow 0.4s, transform 0.4s;
 }
 
-.practitioner-card:hover .prac-img-wrap {
-  box-shadow: 0 0 0 6px rgba(220,1,75,.12);
+.team-node:hover .prac-img-wrap {
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--leaf-color) 18%, transparent),
+    0 12px 28px rgba(0, 41, 59, 0.12);
+  transform: scale(1.03);
 }
 
-.prac-img-wrap img {
+.team-node .prac-img-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -995,22 +1109,72 @@ section { padding: 120px 0; }
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  color: rgba(0,41,59,.2);
+  color: rgba(0, 41, 59, 0.2);
   background: linear-gradient(135deg, #edf2f7, #f9f9f9);
 }
 
-.prac-name {
+.team-node .prac-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
+  font-size: 1.18rem;
   font-weight: 600;
-  margin-bottom: .3rem;
+  margin-bottom: 0.3rem;
+  color: var(--primary);
 }
 
-.prac-role {
-  font-size: .76rem;
-  letter-spacing: .12em;
+.team-node .prac-role {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--brand);
+  color: var(--leaf-color);
+}
+
+@media (max-width: 991px) {
+  .team-tree-stage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'tree tree'
+      'left right';
+    gap: 1.5rem 1.25rem;
+  }
+
+  .team-tree-col--tree {
+    grid-area: tree;
+  }
+
+  .team-tree-col--left {
+    grid-area: left;
+  }
+
+  .team-tree-col--right {
+    grid-area: right;
+  }
+
+  .team-tree-canvas-wrap {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .team-tree-stage {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'tree'
+      'left'
+      'right';
+    gap: 1.25rem;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .team-tree-col .team-node .practitioner-card {
+    max-width: none;
+  }
+
+  .team-tree-col .team-node .prac-img-wrap {
+    width: 132px;
+    height: 132px;
+  }
 }
 
 /* ── TESTIMONIALS (3-col accordion messages) ── */
