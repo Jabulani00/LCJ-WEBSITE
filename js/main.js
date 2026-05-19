@@ -17,14 +17,20 @@ window.addEventListener('scroll', () => {
 });
 
 /* Mobile menu */
-document.getElementById('burgerBtn').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.add('open');
-});
-document.getElementById('mobileClose').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.remove('open');
-});
+const mobileMenu = document.getElementById('mobileMenu');
+const burgerBtn = document.getElementById('burgerBtn');
+const mobileClose = document.getElementById('mobileClose');
+
+function setMobileMenuOpen(open) {
+  if (!mobileMenu) return;
+  mobileMenu.classList.toggle('open', open);
+  document.body.classList.toggle('mobile-menu-open', open);
+}
+
+if (burgerBtn) burgerBtn.addEventListener('click', () => setMobileMenuOpen(true));
+if (mobileClose) mobileClose.addEventListener('click', () => setMobileMenuOpen(false));
 document.querySelectorAll('#mobileMenu a').forEach((a) => {
-  a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+  a.addEventListener('click', () => setMobileMenuOpen(false));
 });
 
 /* Hero headline animation */

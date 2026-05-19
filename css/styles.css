@@ -37,6 +37,11 @@ body {
   position: relative;
 }
 
+body.mobile-menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
 /* Custom logo cursor — site-wide (forced) */
 html,
 body,
@@ -461,7 +466,11 @@ h1, h2, h3, h4, h5 {
   }
 
   .hero-practitioner {
-    width: min(280px, 100%);
+    width: min(300px, 100%);
+  }
+
+  .hero-practitioner-name {
+    font-size: 1.3rem;
   }
 }
 
@@ -1149,9 +1158,6 @@ section { padding: 120px 0; }
     grid-area: right;
   }
 
-  .team-tree-canvas-wrap {
-    max-width: 300px;
-  }
 }
 
 @media (max-width: 767px) {
@@ -1161,19 +1167,24 @@ section { padding: 120px 0; }
       'tree'
       'left'
       'right';
-    gap: 1.25rem;
-    max-width: 320px;
+    gap: 1.35rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .team-tree-col--tree {
+    min-height: 280px;
+  }
+
+  .team-tree-nodes--stack {
+    max-width: min(320px, 100%);
     margin-left: auto;
     margin-right: auto;
   }
 
-  .team-tree-col .team-node .practitioner-card {
-    max-width: none;
-  }
-
   .team-tree-col .team-node .prac-img-wrap {
-    width: 132px;
-    height: 132px;
+    width: 128px;
+    height: 128px;
   }
 }
 
@@ -1844,7 +1855,32 @@ footer {
 
 .newsletter-btn:hover { background: var(--brand-dark); }
 
-/* ── RESPONSIVE ── */
+.newsletter-form {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ── RESPONSIVE (site-wide) ── */
+img,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+}
+
+@media (max-width: 1199px) {
+  .team-tree-stage {
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 0.95fr) minmax(0, 1fr);
+    gap: 1rem 1.25rem;
+  }
+}
+
 @media (max-width: 991px) {
   .nav-links, .nav-cta-btn { display: none !important; }
   .burger { display: flex; margin-left: auto; }
@@ -1856,16 +1892,233 @@ footer {
   }
   #mainNav .nav-brand { margin-right: 0; }
   .nav-brand-text { font-size: .95rem; letter-spacing: .08em; }
+
+  #about .col-lg-6.offset-lg-1 {
+    margin-top: 0.5rem;
+  }
+
+  #contact .col-lg-6.offset-lg-1 {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  :root { --nav-offset: 96px; }
+
+  section { padding: 72px 0; }
+  #services,
+  #testimonials { padding: 64px 0; }
+  #membership { padding: 72px 0; }
+  #cta { padding: 88px 0; }
+  footer { padding: 56px 0 32px; }
+
+  .about-image-wrap::before { display: none; }
+  .about-image-wrap img {
+    height: min(380px, 58vw);
+    min-height: 240px;
+  }
+
+  .about-stat { font-size: 2.35rem; }
+  .about-stat-label { font-size: .7rem; }
+
+  #hero {
+    min-height: 100svh;
+    min-height: 100dvh;
+    height: auto;
+  }
+
+  .hero-layout {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: 4.5rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.15rem, 10.5vw, 3.35rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-sub {
+    font-size: .92rem;
+    margin-bottom: 2rem;
+    line-height: 1.75;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 1.25rem;
+    font-size: .72rem;
+  }
+
+  .hero-practitioner {
+    width: min(300px, 100%);
+  }
+
+  .scroll-line { bottom: 1.25rem; }
+
+  .section-title { font-size: clamp(1.9rem, 7.5vw, 2.75rem); }
+  .section-label { font-size: .62rem; letter-spacing: .24em; }
+
+  .testi-grid,
+  .svc-grid {
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .svc-card-toggle {
+    grid-template-columns: auto auto 1fr auto;
+    padding: 0.75rem 0.85rem;
+    gap: 0.45rem;
+  }
+
+  .svc-card-name { font-size: 0.78rem; }
+
+  .tier-card {
+    padding: 2rem 1.35rem;
+  }
+
+  .tier-pricing-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.72rem;
+  }
+
+  .tier-pricing-table th,
+  .tier-pricing-table td {
+    white-space: nowrap;
+    padding: 0.35rem 0.5rem;
+  }
+
+  .btn-primary-lcj,
+  .btn-outline-lcj {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #cta .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-info-item {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-value {
+    word-break: break-word;
+    font-size: 0.88rem;
+  }
+
+  .form-field { font-size: 1rem; }
+
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-bottom .d-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.7rem;
+    line-height: 1.5;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .newsletter-input {
+    min-width: 0;
+    flex: 1 1 140px;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0;
+  }
+
+  .journey-curtain-label {
+    white-space: normal;
+    text-align: center;
+    max-width: min(90vw, 280px);
+    line-height: 1.5;
+  }
+
+  .team-tree-stage {
+    min-height: 0;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .team-tree-col--left .team-node,
+  .team-tree-col--right .team-node {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .team-tree-col .team-node .practitioner-card {
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 480px) {
   .nav-brand-text { display: none; }
   .nav-logo { width: 38px; height: 38px; }
-}
+  #mainNav { padding-left: 10px; padding-right: 10px; }
+  .nav-float { max-width: 100%; }
 
-@media (max-width: 767px) {
-  section { padding: 80px 0; }
-  .about-image-wrap::before { display: none; }
+  #mobileMenu a {
+    font-size: clamp(1.65rem, 8vw, 2.2rem);
+  }
+
+  #mobileClose {
+    top: max(20px, env(safe-area-inset-top));
+    right: max(20px, env(safe-area-inset-right));
+  }
+
+  .hero-eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    margin-bottom: 1rem;
+  }
+
+  .scroll-line { display: none; }
+
+  .team-node::before {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+  }
+
+  .team-tree-col--left .team-node::before,
+  .team-tree-col--right .team-node::before {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+  }
+
+  .prac-name { font-size: 1.05rem; }
 }
 
 /* ── JOURNEY NAVIGATION (transitions & progress rail) ── */
