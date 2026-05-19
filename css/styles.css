@@ -14,6 +14,8 @@
   --muted: #58656D;
   --border: #edf2f7;
   --nav-offset: 128px;
+  --cursor-logo: url('../assets/cursor-logo.png');
+  --cursor-hotspot: 16 16;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,6 +35,15 @@ body {
   width: 100%;
   max-width: 100%;
   position: relative;
+}
+
+/* Custom logo cursor — site-wide (forced) */
+html,
+body,
+*,
+*::before,
+*::after {
+  cursor: var(--cursor-logo) var(--cursor-hotspot), auto !important;
 }
 
 [hidden] {

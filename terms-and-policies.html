@@ -33,9 +33,19 @@
       --header-h: 72px;
       --font: 'Poppins', system-ui, sans-serif;
       --font-serif: 'Source Serif 4', Georgia, serif;
+      --cursor-logo: url('assets/cursor-logo.png');
+      --cursor-hotspot: 16 16;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
+
+    html,
+    body,
+    *,
+    *::before,
+    *::after {
+      cursor: var(--cursor-logo) var(--cursor-hotspot), auto !important;
+    }
     html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 24px); }
     body {
       margin: 0;
