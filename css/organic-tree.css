@@ -1,0 +1,18 @@
+/* LCJ Organic Tree component */
+.lcj-organic-tree,
+lcj-organic-tree {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.lcj-organic-tree__canvas {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  background: transparent;
+}

@@ -3,310 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#DC014B" />
   <title>LCJ Organic Tree — Life Changing Journey</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/organic-tree.css" />
   <style>
-    :root {
-      --brand: #DC014B;
-      --primary: #00293B;
-      --primary-dark: #001a24;
-      --primary-light: #003d52;
-      --teal: #29AAE0;
-      --accent: #F9A003;
-      --maroon: #711544;
-      --bg: #F9F9F9;
-      --surface: #ffffff;
-      --muted: #58656D;
-    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--primary);
+    html, body {
+      background: transparent;
       min-height: 100vh;
-      padding: 2rem 1rem 3rem;
     }
-    h1, h2 { font-family: 'Cormorant Garamond', serif; font-weight: 600; }
-    .section-label {
-      display: inline-block;
-      font-size: .68rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--brand);
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 300;
-      line-height: 1.12;
-      margin-bottom: 1rem;
-    }
-    .section-title em { font-style: italic; color: var(--teal); }
-    .divider {
-      width: 48px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--brand), var(--teal));
-      margin: 1rem auto 1.2rem;
-    }
-    .intro {
-      max-width: 36rem;
-      margin: 0 auto 1.5rem;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: .95rem;
-    }
-    header { text-align: center; max-width: 720px; margin: 0 auto 1.5rem; }
-    .stage {
-      max-width: 920px;
-      margin: 0 auto;
+    body {
       display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
     }
-    .canvas-wrap {
-      border-radius: 12px;
-      overflow: hidden;
-      background: linear-gradient(180deg, color-mix(in srgb, var(--teal) 8%, var(--surface)), var(--surface));
-      box-shadow: 0 8px 32px rgba(0, 41, 59, 0.08);
-    }
-    #tc { display: block; width: 100%; }
-    .nodes {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .card { text-align: center; }
-    .card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--teal);
-      margin-bottom: .75rem;
-    }
-    .card strong {
-      display: block;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      margin-bottom: .25rem;
-    }
-    .card span {
-      font-size: .68rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--brand);
-    }
-    @media (max-width: 767px) {
-      .nodes { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+    .demo-wrap {
+      width: 100%;
+      max-width: 920px;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <span class="section-label">Our People</span>
-  <h1 class="section-title">Meet the <em>practitioners</em></h1>
-  <div class="divider"></div>
-  <p class="intro">Organic tree grown branch by branch in LCJ colours — logo leaves drift down like your emblem.</p>
-</header>
-
-<div class="stage">
-  <div class="canvas-wrap">
-    <canvas id="tc"></canvas>
-  </div>
+<div class="demo-wrap">
+  <lcj-organic-tree
+    logo="assets/icon.png"
+    pause-when-hidden="false"
+    reduced-motion="false"
+  ></lcj-organic-tree>
 </div>
 
-<script>
-(function () {
-  const LCJ = {
-    primary: '#00293B',
-    primaryDark: '#001a24',
-    primaryLight: '#003d52',
-    brand: '#DC014B',
-    teal: '#29AAE0',
-    accent: '#F9A003',
-    maroon: '#711544',
-    leafPalette: ['#29AAE0', '#DC014B', '#F9A003', '#00293B', '#711544', '#3A7F3D'],
-  };
-
-  const canvas = document.getElementById('tc');
-  const ctx = canvas.getContext('2d');
-  const wrap = canvas.parentElement;
-  let W = 680, H = 420, dpr = 1, midX, baseY;
-  const branches = [], tips = [], canopy = [], fallers = [];
-  const MAX_LV = 8;
-  const logoImg = new Image();
-  logoImg.src = 'assets/icon.png';
-
-  let _seed = 8321;
-  function rng() { _seed ^= _seed << 13; _seed ^= _seed >> 17; _seed ^= _seed << 5; return (_seed >>> 0) / 0xffffffff; }
-  const rand = (a, b) => a + rng() * (b - a);
-
-  function hexToRgb(hex) {
-    const h = hex.replace('#', '');
-    const n = parseInt(h, 16);
-    return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
-  }
-
-  function branchColor(lv) {
-    const t = lv / MAX_LV;
-    const a = hexToRgb(LCJ.primaryDark), b = hexToRgb(LCJ.primary), c = hexToRgb(LCJ.primaryLight);
-    return `rgb(${Math.round(a.r + (c.r - a.r) * t)},${Math.round(a.g + (c.g - a.g) * t)},${Math.round(a.b + (c.b - a.b) * t)})`;
-  }
-
-  function grow(x1, y1, angle, len, w, lv) {
-    if (len < 8 || lv > MAX_LV) { tips.push({ x: x1, y: y1 }); return; }
-    const x2 = x1 + Math.sin(angle) * len;
-    const y2 = y1 - Math.cos(angle) * len;
-    branches.push({ x1, y1, x2, y2, w, lv });
-    const spread = 0.26 + rand(0, 0.2);
-    grow(x2, y2, angle - spread + rand(-0.08, 0.08), len * rand(0.66, 0.75), w * rand(0.62, 0.7), lv + 1);
-    grow(x2, y2, angle + spread + rand(-0.08, 0.08), len * rand(0.66, 0.75), w * rand(0.62, 0.7), lv + 1);
-  }
-
-  function build() {
-    _seed = 8321;
-    branches.length = 0;
-    tips.length = 0;
-    canopy.length = 0;
-    grow(midX, baseY, 0, Math.min(H * 0.32, 130), 16, 0);
-    tips.forEach((tip) => {
-      for (let i = 0; i < 8; i++) {
-        const a = rand(0, Math.PI * 2), d = rand(4, 16);
-        canopy.push({
-          x: tip.x + Math.cos(a) * d,
-          y: tip.y + Math.sin(a) * d * 0.62,
-          r: rand(3, 6.5),
-          color: LCJ.leafPalette[Math.floor(rand(0, LCJ.leafPalette.length))],
-          phase: rand(0, Math.PI * 2),
-          isLogo: rng() > 0.5,
-          logoSize: rand(14, 22),
-          rot: rand(-0.4, 0.4),
-        });
-      }
-    });
-  }
-
-  function resize() {
-    W = wrap.clientWidth || 680;
-    H = Math.max(280, Math.min(420, W * 0.55));
-    dpr = Math.min(devicePixelRatio || 1, 2);
-    canvas.width = W * dpr;
-    canvas.height = H * dpr;
-    canvas.style.width = W + 'px';
-    canvas.style.height = H + 'px';
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    midX = W / 2;
-    baseY = H - 20;
-    build();
-  }
-
-  function drawLogo(x, y, size, rot, alpha) {
-    if (!logoImg.complete) return false;
-    ctx.save();
-    ctx.globalAlpha = alpha;
-    ctx.translate(x, y);
-    ctx.rotate(rot);
-    ctx.drawImage(logoImg, -size / 2, -size / 2, size, size);
-    ctx.restore();
-    return true;
-  }
-
-  function spawnLeaf() {
-    if (fallers.length >= 10 || !tips.length) return;
-    const tip = tips[Math.floor(Math.random() * tips.length)];
-    fallers.push({
-      x: tip.x + (Math.random() - 0.5) * 28,
-      y: tip.y,
-      size: 14 + Math.random() * 12,
-      color: LCJ.leafPalette[Math.floor(Math.random() * LCJ.leafPalette.length)],
-      vx: 0, vy: 0.45 + Math.random() * 0.55,
-      rot: Math.random() * Math.PI * 2,
-      rotSpeed: (Math.random() - 0.5) * 0.055,
-      sway: Math.random() * Math.PI * 2,
-      swayAmt: 0.45 + Math.random() * 1.4,
-      swaySpeed: 0.016 + Math.random() * 0.026,
-      alpha: 1,
-      useLogo: logoImg.complete,
-    });
-  }
-
-  let t0 = null, lastSpawn = -999;
-
-  function frame(ts) {
-    if (!t0) t0 = ts;
-    const elapsed = ts - t0;
-    ctx.clearRect(0, 0, W, H);
-
-    const g = hexToRgb(LCJ.primary);
-    ctx.globalAlpha = 0.1;
-    ctx.beginPath();
-    ctx.ellipse(midX, baseY + 6, 88, 10, 0, 0, Math.PI * 2);
-    ctx.fillStyle = `rgb(${g.r},${g.g},${g.b})`;
-    ctx.fill();
-    ctx.globalAlpha = 1;
-
-    const prog = Math.min(elapsed / 2800, 1);
-    for (const b of branches) {
-      const s = b.lv / (MAX_LV + 1), e = (b.lv + 1) / (MAX_LV + 1);
-      if (prog <= s) continue;
-      const frac = Math.min((prog - s) / (e - s), 1);
-      ctx.beginPath();
-      ctx.moveTo(b.x1, b.y1);
-      ctx.lineTo(b.x1 + (b.x2 - b.x1) * frac, b.y1 + (b.y2 - b.y1) * frac);
-      ctx.strokeStyle = branchColor(b.lv);
-      ctx.lineWidth = b.w;
-      ctx.lineCap = 'round';
-      ctx.stroke();
-    }
-
-    if (elapsed > 2200) {
-      const lp = Math.min((elapsed - 2200) / 750, 1);
-      const time = ts * 0.001;
-      for (const leaf of canopy) {
-        const lx = leaf.x + Math.sin(time * 0.62 + leaf.phase) * 1.6;
-        const ly = leaf.y + Math.cos(time * 0.48 + leaf.phase) * 0.9;
-        if (leaf.isLogo && drawLogo(lx, ly, leaf.logoSize, leaf.rot + time * 0.15, lp * 0.9)) continue;
-        ctx.globalAlpha = lp * 0.82;
-        ctx.beginPath();
-        ctx.ellipse(lx, ly, leaf.r, leaf.r * 0.68, 0, 0, Math.PI * 2);
-        ctx.fillStyle = leaf.color;
-        ctx.fill();
-        ctx.globalAlpha = 1;
-      }
-    }
-
-    if (prog >= 1 && elapsed - lastSpawn > 980) { spawnLeaf(); lastSpawn = elapsed; }
-
-    for (let i = fallers.length - 1; i >= 0; i--) {
-      const f = fallers[i];
-      f.sway += f.swaySpeed;
-      f.vx = Math.sin(f.sway) * f.swayAmt * 0.48;
-      f.x += f.vx; f.y += f.vy;
-      f.vy = Math.min(f.vy + 0.021, 2);
-      f.rot += f.rotSpeed;
-      if (f.y > H + 28) { fallers.splice(i, 1); continue; }
-      if (f.y > H - 65) f.alpha = Math.max(0, (H - f.y) / 65);
-      if (f.useLogo && drawLogo(f.x, f.y, f.size, f.rot, f.alpha)) continue;
-      ctx.save();
-      ctx.globalAlpha = f.alpha;
-      ctx.translate(f.x, f.y);
-      ctx.rotate(f.rot);
-      ctx.beginPath();
-      ctx.ellipse(0, 0, f.size * 1.1, f.size * 0.5, 0, 0, Math.PI * 2);
-      ctx.fillStyle = f.color;
-      ctx.fill();
-      ctx.restore();
-    }
-    requestAnimationFrame(frame);
-  }
-
-  resize();
-  window.addEventListener('resize', resize);
-  logoImg.onload = build;
-  requestAnimationFrame(frame);
-})();
-</script>
+<script src="js/organic-tree.js"></script>
 </body>
 </html>

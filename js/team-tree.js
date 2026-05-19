@@ -7,9 +7,11 @@
   const section = document.getElementById('team');
   const stage = document.getElementById('teamTreeStage');
   const treeCol = document.getElementById('teamTreeColTree');
-  const canvasWrap = canvas.parentElement;
 
-  if (!canvas || !section || !stage || !canvasWrap || !treeCol) return;
+  if (!canvas || !section || !stage || !treeCol) return;
+
+  const canvasWrap = canvas.parentElement;
+  if (!canvasWrap) return;
 
   const ctx = canvas.getContext('2d');
   const ICON_PATHS = ['assets/icon.png', 'assets/images/icon.png'];
@@ -19,23 +21,47 @@
 
   const LEAF_PALETTE = ['#29AAE0', '#DC014B', '#F9A003', '#00293B', '#711544', '#3A7F3D'];
 
-  function tryLoadLogo() {
-    if (iconPathIndex >= ICON_PATHS.length) return;
-    logoImg.src = ICON_PATHS[iconPathIndex];
+  function resolveLogoPath(path) {
+    try {
+      return new URL(path, document.baseURI).href;
+    } catch {
+      return path;
+    }
   }
 
-  logoImg.onload = () => {
+  function logoDrawable() {
+    return logoReady && logoImg.complete && logoImg.naturalWidth > 0;
+  }
+
+  function onLogoReady() {
+    if (!logoImg.naturalWidth) return;
     logoReady = true;
     buildTreeGeometry();
-  };
+    lastSpawn = -999;
+  }
+
+  function tryLoadLogo() {
+    if (iconPathIndex >= ICON_PATHS.length) {
+      logoReady = false;
+      buildTreeGeometry();
+      return;
+    }
+    logoImg.src = resolveLogoPath(ICON_PATHS[iconPathIndex]);
+    if (logoImg.complete && logoImg.naturalWidth > 0) {
+      onLogoReady();
+    }
+  }
+
+  logoImg.onload = () => onLogoReady();
   logoImg.onerror = () => {
     iconPathIndex += 1;
+    logoReady = false;
     if (iconPathIndex < ICON_PATHS.length) tryLoadLogo();
-    else buildTreeGeometry();
+    else if (layoutReady) buildTreeGeometry();
   };
-  tryLoadLogo();
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let layoutReady = false;
 
   let W = 680;
   let H = 400;
@@ -51,13 +77,13 @@
   let anchors = [];
   let t0 = null;
   let lastSpawn = -999;
-  let sectionVisible = false;
+  let sectionVisible = true;
   let theme = {};
 
   const MAX_LV = 8;
-  const MAX_FALLERS = prefersReduced ? 0 : 10;
+  const MAX_FALLERS = 10;
   const SPAWN_INTERVAL = 980;
-  const GROW_DURATION = 2800;
+  const GROW_DURATION = prefersReduced ? 0 : 2800;
   const CANOPY_START = 2200;
   const CANOPY_FADE = 750;
 
@@ -111,6 +137,8 @@
 
   /** Rebuild branches only — never reset animation clock or fallers */
   function buildTreeGeometry() {
+    if (!layoutReady || !Number.isFinite(midX) || !Number.isFinite(baseY)) return;
+
     _seed = 8321;
     branches = [];
     tips = [];
@@ -129,7 +157,7 @@
           y: tip.y + Math.sin(a) * d * 0.62,
           r: rand(3, 6.5),
           color: LEAF_PALETTE[Math.floor(rand(0, LEAF_PALETTE.length))],
-          isLogo: logoReady && rng() > 0.5,
+          isLogo: logoDrawable() && rng() > 0.5,
           logoSize: rand(14, 22),
           phase: rand(0, Math.PI * 2),
           rot: rand(-0.4, 0.4),
@@ -226,7 +254,7 @@
   }
 
   function drawLogo(x, y, size, rot, alpha) {
-    if (!logoReady) return false;
+    if (!logoDrawable()) return false;
     ctx.save();
     ctx.globalAlpha = alpha;
     ctx.translate(x, y);
@@ -248,28 +276,14 @@
     ctx.restore();
   }
 
-  function pickSpawnPoint() {
-    if (tips.length) {
-      const t = tips[Math.floor(Math.random() * tips.length)];
-      return { x: t.x + (Math.random() - 0.5) * 28, y: t.y };
-    }
-    if (canopy.length) {
-      const c = canopy[Math.floor(Math.random() * canopy.length)];
-      return { x: c.x, y: c.y };
-    }
-    return null;
-  }
-
   function spawnLeaf() {
-    if (fallers.length >= MAX_FALLERS) return;
-    const pt = pickSpawnPoint();
-    if (!pt) return;
+    if (fallers.length >= MAX_FALLERS || !tips.length) return;
+    const tip = tips[Math.floor(Math.random() * tips.length)];
     fallers.push({
-      x: pt.x,
-      y: pt.y,
+      x: tip.x + (Math.random() - 0.5) * 28,
+      y: tip.y,
       size: 14 + Math.random() * 12,
       color: LEAF_PALETTE[Math.floor(Math.random() * LEAF_PALETTE.length)],
-      useLogo: logoReady,
       vx: 0,
       vy: 0.45 + Math.random() * 0.55,
       rot: Math.random() * Math.PI * 2,
@@ -295,7 +309,7 @@
         continue;
       }
       if (f.y > H - 65) f.alpha = Math.max(0, (H - f.y) / 65);
-      if (f.useLogo && drawLogo(f.x, f.y, f.size, f.rot, f.alpha)) continue;
+      if (drawLogo(f.x, f.y, f.size, f.rot, f.alpha)) continue;
       drawColorLeaf(f.x, f.y, f.size, f.rot, f.alpha, f.color);
     }
   }
@@ -320,18 +334,19 @@
   }
 
   function frame(ts) {
-    if (!sectionVisible) {
-      requestAnimationFrame(frame);
-      return;
-    }
+    requestAnimationFrame(frame);
+
+    if (!layoutReady) return;
+
+    if (!sectionVisible) return;
 
     if (!t0) t0 = ts;
     const elapsed = ts - t0;
 
     ctx.clearRect(0, 0, W, H);
 
-    const growDur = prefersReduced ? 0 : GROW_DURATION;
-    const prog = prefersReduced ? 1 : Math.min(elapsed / growDur, 1);
+    const growDur = GROW_DURATION;
+    const prog = growDur === 0 ? 1 : Math.min(elapsed / growDur, 1);
 
     for (const b of branches) {
       const s = b.lv / (MAX_LV + 1);
@@ -349,8 +364,8 @@
 
     drawConnectors(prog);
 
-    if (elapsed > CANOPY_START || prefersReduced) {
-      const lp = prefersReduced ? 1 : Math.min((elapsed - CANOPY_START) / CANOPY_FADE, 1);
+    if (elapsed > CANOPY_START || growDur === 0) {
+      const lp = growDur === 0 ? 1 : Math.min((elapsed - CANOPY_START) / CANOPY_FADE, 1);
       const time = ts * 0.001;
       for (const leaf of canopy) {
         const lx = leaf.x + Math.sin(time * 0.62 + leaf.phase) * 1.6;
@@ -365,30 +380,35 @@
       }
     }
 
-    const canSpawn = !prefersReduced && prog >= 1 && (tips.length || canopy.length);
-    if (canSpawn && elapsed - lastSpawn > SPAWN_INTERVAL) {
+    if (MAX_FALLERS > 0 && prog >= 1 && tips.length && elapsed - lastSpawn > SPAWN_INTERVAL) {
       spawnLeaf();
       lastSpawn = elapsed;
     }
 
     updateFallers();
-
-    requestAnimationFrame(frame);
   }
 
   function onSectionShow() {
     sectionVisible = true;
-    if (!t0) lastSpawn = -999;
+    lastSpawn = -999;
     drawAnchors();
   }
 
   function onSectionHide() {
     sectionVisible = false;
-    fallers = [];
   }
 
-  readTheme();
-  resize();
+  function boot() {
+    readTheme();
+    resize();
+    layoutReady = true;
+    tryLoadLogo();
+
+    requestAnimationFrame(() => {
+      resize();
+      drawAnchors();
+    });
+  }
 
   const io = new IntersectionObserver(
     (entries) => {
@@ -397,13 +417,15 @@
         else onSectionHide();
       });
     },
-    { root: null, rootMargin: '0px', threshold: 0.05 }
+    { root: null, rootMargin: '120px 0px', threshold: 0 }
   );
-  io.observe(section);
-
-  if (section.getBoundingClientRect().top < window.innerHeight && section.getBoundingClientRect().bottom > 0) {
-    onSectionShow();
-  }
+  requestAnimationFrame(() => {
+    io.observe(section);
+    const rect = section.getBoundingClientRect();
+    if (rect.height > 0 && rect.top < window.innerHeight && rect.bottom > 0) {
+      onSectionShow();
+    }
+  });
 
   window.addEventListener(
     'resize',
@@ -415,6 +437,12 @@
   );
 
   new ResizeObserver(() => resize()).observe(stage);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 
   requestAnimationFrame(frame);
 })();
