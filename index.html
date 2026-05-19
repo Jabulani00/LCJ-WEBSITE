@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Life Changing Journey &mdash; holistic psychology, spiritual healing, financial guidance, hypnotherapy, consulting, and education in Durban, South Africa." />
+  <meta name="theme-color" content="#DC014B" />
+  <title>Life Changing Journey</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+<div id="mobileMenu">
+  <button id="mobileClose" aria-label="Close menu"><i class="bi bi-x-lg"></i></button>
+  <img src="assets/icon.png" alt="Life Changing Journey" class="mobile-menu-logo" width="72" height="72" />
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#team">Practitioners</a>
+  <a href="#membership">Membership</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<nav id="mainNav" aria-label="Main navigation">
+  <div class="nav-float">
+    <a href="#" class="nav-brand">
+      <img src="assets/icon.png" alt="Life Changing Journey" class="nav-logo" width="42" height="42" />
+      <span class="nav-brand-text">Life Changing <span>Journey</span></span>
+    </a>
+    <ul class="nav-links mb-0">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Practitioners</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://wa.me/27658460441" target="_blank" rel="noopener noreferrer" class="nav-cta-btn">Book Now</a>
+    <button class="burger" id="burgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<aside id="journeyRail" class="journey-rail" aria-label="Journey progress through the site">
+  <div class="journey-rail-inner">
+    <span class="journey-rail-label">Your path</span>
+    <div class="journey-rail-track" aria-hidden="true">
+      <span class="journey-rail-fill" id="journeyRailFill"></span>
+    </div>
+    <ol class="journey-rail-stops" id="journeyRailStops"></ol>
+  </div>
+</aside>
+
+<div id="journeyCurtain" class="journey-curtain" aria-hidden="true">
+  <div class="journey-curtain-road"></div>
+  <span class="journey-curtain-label" id="journeyCurtainLabel">Continuing your journey</span>
+</div>
+
+<section id="hero" class="journey-section" data-journey-label="The road ahead">
+  <div class="hero-parallax" aria-hidden="true">
+    <div class="hero-layer hero-layer-primary" id="heroLayerBg"></div>
+  </div>
+  <div class="hero-overlay" id="heroOverlay"></div>
+  <div class="hero-glow" id="heroGlow"></div>
+  <div class="container hero-layout">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Durban, KwaZulu-Natal &middot; South Africa</span>
+      <h1 class="hero-headline" id="heroHeadline"></h1>
+      <p class="hero-sub">
+        A holistic sanctuary where psychology, spirituality, financial guidance, and personal transformation converge &mdash; guiding you toward the life you were meant to live.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="hero-cta"><span>Explore Our Services</span> <i class="bi bi-arrow-right"></i></a>
+        <a href="https://psychologistdurban.co.za" target="_blank" rel="noopener noreferrer" class="hero-cta hero-cta-outline">
+          <span>Psychology Services</span>
+        </a>
+      </div>
+    </div>
+    <aside class="hero-practitioner">
+      <a href="https://psychologistdurban.co.za" target="_blank" rel="noopener noreferrer" class="hero-practitioner-card">
+        <div class="hero-practitioner-photo">
+          <img src="assets/vuyani.jpeg"
+               alt="Vuyani Nyezi &mdash; Counselling Psychologist"
+               data-fallback="#29AAE0" />
+        </div>
+        <div class="hero-practitioner-info">
+          <span class="hero-practitioner-label">Psychology Services</span>
+          <strong class="hero-practitioner-name">Vuyani Nyezi</strong>
+          <span class="hero-practitioner-role">Counselling Psychologist &middot; 12+ years</span>
+          <span class="hero-practitioner-link">psychologistdurban.co.za <i class="bi bi-arrow-up-right"></i></span>
+        </div>
+      </a>
+    </aside>
+  </div>
+  <div class="scroll-line">
+    <span>Scroll</span>
+    <div class="line"></div>
+  </div>
+</section>
+
+<div class="journey-bridge" aria-hidden="true">
+  <svg class="journey-bridge-svg" viewBox="0 0 1440 72" preserveAspectRatio="none">
+    <path class="journey-bridge-path" d="M0,36 C240,72 480,0 720,36 S1200,72 1440,36" />
+  </svg>
+</div>
+
+<section id="about" class="journey-section" data-journey-label="Our story">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 reveal from-left">
+        <div class="about-image-wrap">
+          <img src="assets/vuyani.jpeg"
+               alt="Life Changing Journey &mdash; holistic wellness in Durban"
+               data-fallback="#29AAE0" />
+        </div>
+      </div>
+      <div class="col-lg-6 offset-lg-1 reveal from-right">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Transforming lives through <em>holistic healing</em></h2>
+        <div class="divider"></div>
+        <p style="font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:1.8rem;">
+          Life Changing Journey is a Durban-based wellness organisation bringing together specialist practitioners in psychology, spiritual healing, financial guidance, hypnotherapy, professional consulting, and rural education. We believe every person carries the seed of an extraordinary life &mdash; we help you find it.
+        </p>
+        <p style="font-size:.95rem;color:var(--muted);line-height:1.9;margin-bottom:2.4rem;">
+          Rooted in African wisdom and guided by Ubuntu philosophy, our integrated approach honours the whole person &mdash; mind, spirit, community, and future.
+        </p>
+        <div class="row g-4">
+          <div class="col-4">
+            <div class="about-stat">12+</div>
+            <div class="about-stat-label">Years of<br>Experience</div>
+          </div>
+          <div class="col-4">
+            <div class="about-stat">6</div>
+            <div class="about-stat-label">Specialist<br>Services</div>
+          </div>
+          <div class="col-4">
+            <div class="about-stat">&infin;</div>
+            <div class="about-stat-label">Lives<br>Changed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="journey-section" data-journey-label="Pathways">
+  <div class="container">
+    <header class="services-header reveal text-center">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">Six pathways to <em>transformation</em></h2>
+      <div class="divider mx-auto"></div>
+      <p class="services-intro">Each service is delivered by a dedicated practitioner or partner. Tap a pathway to explore details and book.</p>
+    </header>
+
+    <div class="svc-grid reveal" id="svcGrid">
+
+        <article class="svc-card is-open" style="--svc-color:#29AAE0" data-fallback="#29AAE0">
+          <button type="button" class="svc-card-toggle" aria-expanded="true" aria-controls="svc-body-0" id="svc-tab-0">
+            <span class="svc-card-num">01</span>
+            <span class="svc-card-thumb">
+              <img src="assets/vuyani.jpeg" alt="Psychology Services" width="32" height="32" data-fallback="#29AAE0" />
+            </span>
+            <span class="svc-card-head">
+              <strong class="svc-card-name">Psychology Services</strong>
+              <span class="svc-card-chip">Mental wellness</span>
+            </span>
+            <i class="bi bi-chevron-down svc-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="svc-card-body" id="svc-body-0" role="region" aria-labelledby="svc-tab-0">
+            <div class="svc-card-media">
+              <img src="assets/vuyani.jpeg" alt="Psychology Services — Vuyani Nyezi" data-fallback="#29AAE0" />
+            </div>
+            <p class="svc-card-desc">12+ years of individual therapy, assessments, and African psychology integration.</p>
+            <p class="svc-card-meta">Vuyani Nyezi &mdash; Counselling Psychologist</p>
+            <ul class="svc-card-features">
+              <li>Individual therapy &amp; assessments</li>
+              <li>Trauma &amp; stress support</li>
+              <li>Indigenous knowledge systems</li>
+            </ul>
+            <div class="svc-card-actions">
+              <a href="https://psychologistdurban.co.za" target="_blank" rel="noopener noreferrer" class="svc-btn svc-btn-primary">Website</a>
+              <a href="tel:+27672803432" class="svc-btn svc-btn-ghost"><i class="bi bi-telephone"></i> Call</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" style="--svc-color:#F9A003" data-fallback="#F9A003">
+          <button type="button" class="svc-card-toggle" aria-expanded="false" aria-controls="svc-body-1" id="svc-tab-1">
+            <span class="svc-card-num">02</span>
+            <span class="svc-card-thumb">
+              <img src="assets/images/life-changing-journey-spiritual.jpeg" alt="Spiritual Interventions" width="32" height="32" data-fallback="#F9A003" />
+            </span>
+            <span class="svc-card-head">
+              <strong class="svc-card-name">Spiritual Interventions</strong>
+              <span class="svc-card-chip">Spiritual growth</span>
+            </span>
+            <i class="bi bi-chevron-down svc-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="svc-card-body" id="svc-body-1" role="region" aria-labelledby="svc-tab-1" hidden>
+            <div class="svc-card-media">
+              <img src="assets/images/life-changing-journey-spiritual.jpeg" alt="Spiritual Interventions" data-fallback="#F9A003" />
+            </div>
+            <p class="svc-card-desc">Traditional African spiritual cleansing, guidance, and Ubuntu-based healing.</p>
+            <p class="svc-card-meta">Life Changing Journey &mdash; Traditional Spiritual Practitioner</p>
+            <ul class="svc-card-features">
+              <li>Spiritual cleansing ceremonies</li>
+              <li>Ancestral communication</li>
+              <li>Cultural heritage healing</li>
+            </ul>
+            <div class="svc-card-actions">
+              <a href="https://lifechangingjourney.co.za" target="_blank" rel="noopener noreferrer" class="svc-btn svc-btn-primary">Website</a>
+              <a href="tel:+27310350208" class="svc-btn svc-btn-ghost"><i class="bi bi-telephone"></i> Call</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" style="--svc-color:#00293B" data-fallback="#00293B">
+          <button type="button" class="svc-card-toggle" aria-expanded="false" aria-controls="svc-body-2" id="svc-tab-2">
+            <span class="svc-card-num">03</span>
+            <span class="svc-card-thumb">
+              <img src="assets/images/tshabalala-omkhulu-financial.jpeg" alt="Financial Guidance" width="32" height="32" data-fallback="#00293B" />
+            </span>
+            <span class="svc-card-head">
+              <strong class="svc-card-name">Financial Guidance</strong>
+              <span class="svc-card-chip">NCRCP20083</span>
+            </span>
+            <i class="bi bi-chevron-down svc-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="svc-card-body" id="svc-body-2" role="region" aria-labelledby="svc-tab-2" hidden>
+            <div class="svc-card-media">
+              <img src="assets/images/tshabalala-omkhulu-financial.jpeg" alt="Tshabalala Omhle Financial Group" data-fallback="#00293B" />
+            </div>
+            <p class="svc-card-desc">Accessible loans, SME financing, and ethical debt consolidation in Durban.</p>
+            <p class="svc-card-meta">Tshabalala Omhle Financial Group &mdash; NCR Registered</p>
+            <ul class="svc-card-features">
+              <li>Soft &amp; personal loans</li>
+              <li>SME business financing</li>
+              <li>Credit counseling</li>
+            </ul>
+            <div class="svc-card-actions">
+              <a href="https://tshabalalafinance.co.za" target="_blank" rel="noopener noreferrer" class="svc-btn svc-btn-primary">Website</a>
+              <a href="tel:+27693084723" class="svc-btn svc-btn-ghost"><i class="bi bi-telephone"></i> Call</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" style="--svc-color:#DC014B" data-fallback="#DC014B">
+          <button type="button" class="svc-card-toggle" aria-expanded="false" aria-controls="svc-body-3" id="svc-tab-3">
+            <span class="svc-card-num">04</span>
+            <span class="svc-card-thumb">
+              <img src="assets/images/life-changing-journey-hypnotherapy.jpeg" alt="Hypnotherapy" width="32" height="32" data-fallback="#DC014B" />
+            </span>
+            <span class="svc-card-head">
+              <strong class="svc-card-name">Hypnotherapy</strong>
+              <span class="svc-card-chip">Life coaching</span>
+            </span>
+            <i class="bi bi-chevron-down svc-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="svc-card-body" id="svc-body-3" role="region" aria-labelledby="svc-tab-3" hidden>
+            <div class="svc-card-media">
+              <img src="assets/images/life-changing-journey-hypnotherapy.jpeg" alt="Hypnotherapy &amp; Life Coaching" data-fallback="#DC014B" />
+            </div>
+            <p class="svc-card-desc">Overcome limiting beliefs, break habits, and unlock your full potential.</p>
+            <p class="svc-card-meta">Clinical Hypnotherapist &amp; Life Coach</p>
+            <ul class="svc-card-features">
+              <li>Clinical hypnotherapy</li>
+              <li>Life coaching &amp; goals</li>
+              <li>Confidence building</li>
+            </ul>
+            <div class="svc-card-actions">
+              <a href="https://lifechangingjourney.co.za" target="_blank" rel="noopener noreferrer" class="svc-btn svc-btn-primary">Website</a>
+              <a href="tel:+27310350208" class="svc-btn svc-btn-ghost"><i class="bi bi-telephone"></i> Call</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" style="--svc-color:#00293B" data-fallback="#00293B">
+          <button type="button" class="svc-card-toggle" aria-expanded="false" aria-controls="svc-body-4" id="svc-tab-4">
+            <span class="svc-card-num">05</span>
+            <span class="svc-card-thumb">
+              <img src="assets/images/life-changing-journey-integrated.jpeg" alt="Consulting" width="32" height="32" data-fallback="#00293B" />
+            </span>
+            <span class="svc-card-head">
+              <strong class="svc-card-name">Consulting</strong>
+              <span class="svc-card-chip">Integrated services</span>
+            </span>
+            <i class="bi bi-chevron-down svc-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="svc-card-body" id="svc-body-4" role="region" aria-labelledby="svc-tab-4" hidden>
+            <div class="svc-card-media">
+              <img src="assets/images/life-changing-journey-integrated.jpeg" alt="Tshabalala Omkhulu Consulting" data-fallback="#00293B" />
+            </div>
+            <p class="svc-card-desc">Registrations, clearances, and licensing handled in one place.</p>
+            <p class="svc-card-meta">Tshabalala Omkhulu &mdash; Integrated Services Consultant</p>
+            <ul class="svc-card-features">
+              <li>Fingerprint clearance</li>
+              <li>SACE, PSIRA &amp; NCR</li>
+              <li>Gambling &amp; ride-share licenses</li>
+            </ul>
+            <div class="svc-card-actions">
+              <a href="https://tshabalalaomkhulu.co.za" target="_blank" rel="noopener noreferrer" class="svc-btn svc-btn-primary">Website</a>
+              <a href="tel:+27693084723" class="svc-btn svc-btn-ghost"><i class="bi bi-telephone"></i> Call</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card" style="--svc-color:#711544" data-fallback="#711544">
+          <button type="button" class="svc-card-toggle" aria-expanded="false" aria-controls="svc-body-5" id="svc-tab-5">
+            <span class="svc-card-num">06</span>
+            <span class="svc-card-thumb">
+              <img src="assets/images/nyezi-vuyani-foundation.jpeg" alt="Nyezi Vuyani Foundation" width="32" height="32" data-fallback="#711544" />
+            </span>
+            <span class="svc-card-head">
+              <strong class="svc-card-name">Foundation</strong>
+              <span class="svc-card-chip">Education</span>
+            </span>
+            <i class="bi bi-chevron-down svc-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="svc-card-body" id="svc-body-5" role="region" aria-labelledby="svc-tab-5" hidden>
+            <div class="svc-card-media">
+              <img src="assets/images/nyezi-vuyani-foundation.jpeg" alt="Nyezi Vuyani Foundation" data-fallback="#711544" />
+            </div>
+            <p class="svc-card-desc">Bridging urban-rural education gaps through mentorship and learner support.</p>
+            <p class="svc-card-meta">Nyezi Vuyani Foundation &mdash; Non-Profit</p>
+            <ul class="svc-card-features">
+              <li>Financial assistance</li>
+              <li>Career guidance</li>
+              <li>Community development</li>
+            </ul>
+            <div class="svc-card-actions">
+              <a href="https://www.nyezivfoundation.co.za/" target="_blank" rel="noopener noreferrer" class="svc-btn svc-btn-primary">Website</a>
+              <a href="tel:+27740674650" class="svc-btn svc-btn-ghost"><i class="bi bi-telephone"></i> Call</a>
+            </div>
+          </div>
+        </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="journey-bridge journey-bridge--dark" aria-hidden="true">
+  <svg class="journey-bridge-svg" viewBox="0 0 1440 72" preserveAspectRatio="none">
+    <path class="journey-bridge-path" d="M0,40 C360,0 720,56 1080,24 1440,48" />
+  </svg>
+</div>
+
+<div id="journeyBanner" class="journey-section" data-journey-label="Four pillars">
+  <div class="container position-relative">
+    <div class="journey-strip reveal">
+      <div class="journey-item">
+        <span class="journey-num">01</span>
+        <span class="journey-title">Mind</span>
+        <span class="journey-desc">Psychology &amp; mental wellness</span>
+      </div>
+      <span class="journey-sep" aria-hidden="true"></span>
+      <div class="journey-item">
+        <span class="journey-num">02</span>
+        <span class="journey-title">Spirit</span>
+        <span class="journey-desc">Traditional healing &amp; ancestral wisdom</span>
+      </div>
+      <span class="journey-sep" aria-hidden="true"></span>
+      <div class="journey-item">
+        <span class="journey-num">03</span>
+        <span class="journey-title">Wealth</span>
+        <span class="journey-desc">Financial freedom &amp; stability</span>
+      </div>
+      <span class="journey-sep" aria-hidden="true"></span>
+      <div class="journey-item">
+        <span class="journey-num">04</span>
+        <span class="journey-title">Legacy</span>
+        <span class="journey-desc">Education &amp; community empowerment</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="team" class="journey-section" data-journey-label="Guides">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-label">Our People</span>
+      <h2 class="section-title">Meet the <em>practitioners</em></h2>
+      <div class="divider mx-auto"></div>
+    </div>
+    <div class="row justify-content-center g-4">
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.05s">
+        <div class="practitioner-card">
+          <div class="prac-img-wrap">
+            <img src="assets/vuyani.jpeg" alt="Vuyani Nyezi" data-fallback="#29AAE0" />
+          </div>
+          <div class="prac-name">Vuyani Nyezi</div>
+          <div class="prac-role">Counselling Psychologist</div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.1s">
+        <div class="practitioner-card">
+          <div class="prac-img-wrap">
+            <img src="assets/images/life-changing-journey-spiritual.jpeg" alt="Life Changing Journey Spiritual Team" data-fallback="#F9A003" />
+          </div>
+          <div class="prac-name">Life Changing Journey</div>
+          <div class="prac-role">Traditional Spiritual Practitioner</div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.15s">
+        <div class="practitioner-card">
+          <div class="prac-img-wrap">
+            <img src="assets/images/life-changing-journey-hypnotherapy.jpeg" alt="Hypnotherapy and Life Coaching" data-fallback="#DC014B" />
+          </div>
+          <div class="prac-name">Life Changing Journey</div>
+          <div class="prac-role">Clinical Hypnotherapist &amp; Life Coach</div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.2s">
+        <div class="practitioner-card">
+          <div class="prac-img-wrap">
+            <img src="assets/images/tshabalala-omkhulu-financial.jpeg" alt="Tshabalala Omhle Financial Group" data-fallback="#00293B" />
+          </div>
+          <div class="prac-name">Tshabalala Omhle Financial Group</div>
+          <div class="prac-role">NCR Registered &middot; NCRCP20083</div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.25s">
+        <div class="practitioner-card">
+          <div class="prac-img-wrap">
+            <img src="assets/images/life-changing-journey-integrated.jpeg" alt="Tshabalala Omkhulu" data-fallback="#00293B" />
+          </div>
+          <div class="prac-name">Tshabalala Omkhulu</div>
+          <div class="prac-role">Integrated Services Consultant</div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.3s">
+        <div class="practitioner-card">
+          <div class="prac-img-wrap">
+            <img src="assets/images/nyezi-vuyani-foundation.jpeg" alt="Nyezi Vuyani Foundation" data-fallback="#711544" />
+          </div>
+          <div class="prac-name">Nyezi Vuyani Foundation</div>
+          <div class="prac-role">Non-Profit Educational Organization</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" class="journey-section" data-journey-label="Stories">
+  <div class="container">
+    <header class="testi-header reveal text-center">
+      <span class="section-label">Voices</span>
+      <h2 class="section-title">What our <em>clients</em> say</h2>
+      <div class="divider mx-auto"></div>
+      <p class="testi-intro">Real stories from people on their transformation journey. Tap a message to read more.</p>
+    </header>
+
+    <div class="testi-grid reveal" id="testiGrid">
+
+        <article class="testi-card is-open" data-service="psychology" style="--testi-accent:#29AAE0">
+          <button type="button" class="testi-card-toggle" aria-expanded="true" aria-controls="testi-body-0" id="testi-tab-0">
+            <span class="testi-card-num">01</span>
+            <span class="testi-card-avatar">
+              <img src="assets/vuyani.jpeg" alt="" width="32" height="32" />
+            </span>
+            <span class="testi-card-head">
+              <cite class="testi-card-name">Nomvula K.</cite>
+              <span class="testi-card-chip">Psychology</span>
+            </span>
+            <span class="testi-card-stars" aria-hidden="true">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </span>
+            <i class="bi bi-chevron-down testi-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="testi-card-body" id="testi-body-0" role="region" aria-labelledby="testi-tab-0">
+            <p class="testi-card-quote">Life Changing Journey gave me the tools to finally understand myself. After just a few sessions with Vuyani, I felt a weight lift I had been carrying for years.</p>
+            <span class="testi-card-role">Psychology Client</span>
+          </div>
+        </article>
+
+        <article class="testi-card" data-service="spiritual" style="--testi-accent:#F9A003">
+          <button type="button" class="testi-card-toggle" aria-expanded="false" aria-controls="testi-body-1" id="testi-tab-1">
+            <span class="testi-card-num">02</span>
+            <span class="testi-card-avatar testi-card-avatar-initials" aria-hidden="true">SM</span>
+            <span class="testi-card-head">
+              <cite class="testi-card-name">Sipho M.</cite>
+              <span class="testi-card-chip">Spiritual</span>
+            </span>
+            <span class="testi-card-stars" aria-hidden="true">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </span>
+            <i class="bi bi-chevron-down testi-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="testi-card-body" id="testi-body-1" role="region" aria-labelledby="testi-tab-1" hidden>
+            <p class="testi-card-quote">The spiritual cleansing ceremony was unlike anything I have experienced. I walked in broken and walked out whole. The connection to my ancestors is real.</p>
+            <span class="testi-card-role">Spiritual Client</span>
+          </div>
+        </article>
+
+        <article class="testi-card" data-service="financial" style="--testi-accent:#00293B">
+          <button type="button" class="testi-card-toggle" aria-expanded="false" aria-controls="testi-body-2" id="testi-tab-2">
+            <span class="testi-card-num">03</span>
+            <span class="testi-card-avatar testi-card-avatar-initials" aria-hidden="true">TD</span>
+            <span class="testi-card-head">
+              <cite class="testi-card-name">Thembi D.</cite>
+              <span class="testi-card-chip">Financial</span>
+            </span>
+            <span class="testi-card-stars" aria-hidden="true">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </span>
+            <i class="bi bi-chevron-down testi-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="testi-card-body" id="testi-body-2" role="region" aria-labelledby="testi-tab-2" hidden>
+            <p class="testi-card-quote">Tshabalala Omhle helped my family consolidate our debts and start fresh. Their approach is ethical, transparent, and genuinely caring about our wellbeing.</p>
+            <span class="testi-card-role">Financial Client</span>
+          </div>
+        </article>
+
+        <article class="testi-card" data-service="hypnotherapy" style="--testi-accent:#DC014B">
+          <button type="button" class="testi-card-toggle" aria-expanded="false" aria-controls="testi-body-3" id="testi-tab-3">
+            <span class="testi-card-num">04</span>
+            <span class="testi-card-avatar testi-card-avatar-initials" aria-hidden="true">LN</span>
+            <span class="testi-card-head">
+              <cite class="testi-card-name">Lungelo N.</cite>
+              <span class="testi-card-chip">Hypnotherapy</span>
+            </span>
+            <span class="testi-card-stars" aria-hidden="true">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </span>
+            <i class="bi bi-chevron-down testi-card-chevron" aria-hidden="true"></i>
+          </button>
+          <div class="testi-card-body" id="testi-body-3" role="region" aria-labelledby="testi-tab-3" hidden>
+            <p class="testi-card-quote">Hypnotherapy changed my relationship with fear. Three sessions and I had the confidence to start the business I had been dreaming of for a decade.</p>
+            <span class="testi-card-role">Hypnotherapy Client</span>
+          </div>
+        </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="membership" class="journey-section" data-journey-label="Membership">
+  <div class="container position-relative">
+    <div class="text-center mb-5 reveal">
+      <span class="section-label">Membership</span>
+      <h2 class="section-title">Choose your <em>journey</em></h2>
+      <div class="divider mx-auto"></div>
+      <p style="color:rgba(255,255,255,.55);max-width:520px;margin:0 auto;font-size:.9rem;line-height:1.8">
+        Once-off membership tiers in ZAR. Join our community for priority access, resources, and ongoing support.
+      </p>
+    </div>
+    <div class="row g-4 justify-content-center">
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.05s">
+        <div class="tier-card">
+          <div class="tier-badge silver">Silver</div>
+          <div class="tier-price"><sup>R</sup>100</div>
+          <div class="tier-from">once-off &middot; all member types</div>
+          <table class="tier-pricing-table">
+            <thead><tr><th></th><th>Children</th><th>Adults</th><th>Couples</th></tr></thead>
+            <tbody><tr><td>Price</td><td>R100</td><td>R100</td><td>R100</td></tr></tbody>
+          </table>
+          <ul class="tier-features">
+            <li>Access to all services</li>
+            <li>Community membership</li>
+            <li>Newsletter &amp; resources</li>
+          </ul>
+          <a href="https://www.lifechangingjourney.co.za/plans" target="_blank" rel="noopener noreferrer" class="tier-btn">Get Started</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.1s">
+        <div class="tier-card featured">
+          <div class="tier-badge gold">Gold</div>
+          <div class="tier-price"><sup>R</sup>299</div>
+          <div class="tier-from">adults &middot; once-off (from)</div>
+          <table class="tier-pricing-table">
+            <thead><tr><th></th><th>Children</th><th>Adults</th><th>Couples</th></tr></thead>
+            <tbody><tr><td>Price</td><td>R199</td><td>R299</td><td>R499</td></tr></tbody>
+          </table>
+          <ul class="tier-features">
+            <li>Everything in Silver</li>
+            <li>Priority bookings</li>
+            <li>Monthly group session</li>
+          </ul>
+          <a href="https://www.lifechangingjourney.co.za/plans" target="_blank" rel="noopener noreferrer" class="tier-btn">Get Started</a>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.15s">
+        <div class="tier-card">
+          <div class="tier-badge plat">Platinum</div>
+          <div class="tier-price"><sup>R</sup>599</div>
+          <div class="tier-from">adults &middot; once-off (from)</div>
+          <table class="tier-pricing-table">
+            <thead><tr><th></th><th>Children</th><th>Adults</th><th>Couples</th></tr></thead>
+            <tbody><tr><td>Price</td><td>R399</td><td>R599</td><td>R899</td></tr></tbody>
+          </table>
+          <ul class="tier-features">
+            <li>Everything in Gold</li>
+            <li>1-on-1 coaching session</li>
+            <li>Exclusive workshops</li>
+          </ul>
+          <a href="https://www.lifechangingjourney.co.za/plans" target="_blank" rel="noopener noreferrer" class="tier-btn">Get Started</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="cta" class="journey-section" data-journey-label="Take the step">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <h2 class="cta-title">Your journey begins<br><em>today.</em></h2>
+      <p class="cta-sub">One conversation can change everything. Reach out and take the first step.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center">
+        <a href="https://wa.me/27658460441" target="_blank" rel="noopener noreferrer" class="btn-primary-lcj">
+          <i class="bi bi-whatsapp"></i> <span>WhatsApp Us</span>
+        </a>
+        <a href="#contact" class="btn-outline-lcj"><span>Send a Message</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="contact" class="journey-section" data-journey-label="Connect">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-5 reveal from-left">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">We would love to<br><em>hear from you</em></h2>
+        <div class="divider"></div>
+        <p style="font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:2.4rem;">
+          Whether you are ready to book a session or simply have questions, our team in Durban is here to guide you. Mon&ndash;Fri, 8:00 AM &ndash; 5:00 PM.
+        </p>
+
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <div>
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Durban, KwaZulu-Natal, South Africa</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="bi bi-telephone-fill"></i></div>
+          <div>
+            <div class="contact-label">Office</div>
+            <a href="tel:+27310350208" class="contact-value">+27 31 035 0208</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <a href="https://wa.me/27658460441" target="_blank" rel="noopener noreferrer" class="contact-value">+27 65 846 0441</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="bi bi-envelope-fill"></i></div>
+          <div>
+            <div class="contact-label">Email</div>
+            <a href="mailto:info@lifechangingjourney.co.za" class="contact-value">info@lifechangingjourney.co.za</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="bi bi-globe"></i></div>
+          <div>
+            <div class="contact-label">Website</div>
+            <a href="https://www.lifechangingjourney.co.za" target="_blank" rel="noopener noreferrer" class="contact-value">lifechangingjourney.co.za</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 offset-lg-1 reveal from-right">
+        <form id="contactForm">
+          <div class="row g-0">
+            <div class="col-md-6 pe-md-2">
+              <input class="form-field" type="text" name="name" placeholder="Your Name" required />
+            </div>
+            <div class="col-md-6 ps-md-2">
+              <input class="form-field" type="email" name="email" placeholder="Email Address" required />
+            </div>
+          </div>
+          <input class="form-field" type="tel" name="phone" placeholder="Phone Number" />
+          <select class="form-field" name="service" required>
+            <option value="" disabled selected>Service of Interest</option>
+            <option>Psychology Services</option>
+            <option>Spiritual Interventions</option>
+            <option>Financial Guidance</option>
+            <option>Hypnotherapy &amp; Life Coaching</option>
+            <option>Integrated Services</option>
+            <option>Educational Support</option>
+            <option>General Inquiry</option>
+          </select>
+          <textarea class="form-field" name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-primary-lcj w-100 justify-content-center">
+            Send Message &nbsp;<i class="bi bi-send"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4 reveal">
+        <div class="footer-brand">Life Changing <span>Journey</span></div>
+        <p class="footer-tagline" style="margin-bottom:1.8rem">Holistic transformation rooted in Ubuntu.</p>
+        <div class="social-row">
+          <a href="https://www.facebook.com/share/1B7sqUfweq/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/lifechanging_journey?igsh=ZjF5ZjBoZWU1NXQx" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@lifechangingjourney-h4j" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="https://www.tiktok.com/@lifechangingjourney" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="https://wa.me/27658460441" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6 reveal" style="transition-delay:.1s">
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services">Psychology</a></li>
+          <li><a href="#services">Spiritual</a></li>
+          <li><a href="#services">Financial</a></li>
+          <li><a href="#services">Hypnotherapy</a></li>
+          <li><a href="#services">Consulting</a></li>
+          <li><a href="#services">Foundation</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6 reveal" style="transition-delay:.15s">
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#team">Practitioners</a></li>
+          <li><a href="#membership">Membership</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.lifechangingjourney.co.za" target="_blank" rel="noopener noreferrer">Website</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 reveal" style="transition-delay:.2s">
+        <div class="footer-heading">Newsletter</div>
+        <p style="font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:1.2rem;">
+          Receive insights, event invites, and transformation resources.
+        </p>
+        <div style="display:flex">
+          <input type="email" class="newsletter-input" placeholder="Your email" aria-label="Email for newsletter" />
+          <button type="button" class="newsletter-btn" aria-label="Subscribe"><i class="bi bi-send"></i></button>
+        </div>
+        <div style="margin-top:1.6rem">
+          <span class="ncr-badge">NCR Reg. NCRCP20083</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p>&copy; 2026 Life Changing Journey Organisation &middot; Durban, KwaZulu-Natal, South Africa</p>
+        <p>
+          <a href="https://www.lifechangingjourney.co.za" target="_blank" rel="noopener noreferrer"
+             style="color:rgba(255,255,255,.25);text-decoration:none;font-size:.76rem;">
+            lifechangingjourney.co.za
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/journey.js"></script>
+</body>
+</html>

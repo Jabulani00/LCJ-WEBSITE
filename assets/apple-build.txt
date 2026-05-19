@@ -1,0 +1,76 @@
+
+C:\Users\JABU\Desktop\life-changing-journey>eas build --platform ios --profile production
+The field "cli.appVersionSource" is not set, but it will be required in the future. Learn more: https://docs.expo.dev/build-reference/app-versions/
+Resolved "production" environment for the build. Learn more: https://docs.expo.dev/eas/environment-variables/#setting-the-environment-for-your-builds
+No environment variables with visibility "Plain text" and "Sensitive" found for the "production" environment on EAS.
+Environment variables loaded from the "production" build profile "env" configuration: EXPO_PUBLIC_ENV.
+
+The field "cli.appVersionSource" is not set, but it will be required in the future. Learn more: https://docs.expo.dev/build-reference/app-versions/
+√ Using remote iOS credentials (Expo server)
+
+If you provide your Apple account credentials we will be able to generate all necessary build credentials and fully validate them.
+This is optional, but without Apple account access you will need to provide all the missing values manually and we can only run minimal validation on them.
+√ Do you want to log in to your Apple account? ... yes
+
+› Log in to your Apple Developer account to continue
+√ Apple ID: ... lifechangingjourney84@gmail.com
+› The password is only used to authenticate with Apple and never stored on EAS servers
+  Learn more: https://bit.ly/2VtGWhU
+√ Password (for lifechangingjourney84@gmail.com): ... **********
+› Saving Apple ID password to the local Keychain
+  Learn more: https://docs.expo.dev/distribution/security#keychain
+√ Logged in, verify your Apple account to continue
+Two-factor Authentication (6 digit code) is enabled for lifechangingjourney84@gmail.com. Learn more: https://support.apple.com/en-us/HT204915
+
+√ Please select a trusted phone number to send code to » +27 ••• ••• ••15
+√ Please enter the 6 digit code you received at +27 ••• ••• ••15: ... 174067
+√ Valid code
+√ Logged in and verified
+› Team Vuyani Nyezi (4B3H2MM88X)
+› Provider Vuyani Nyezi (128213008)
+√ Bundle identifier registered com.lifechangingjourney.app
+√ Synced capabilities: Enabled: Associated Domains
+√ Synced capability identifiers: No updates
+√ Fetched Apple distribution certificates
+√ Generate a new Apple Distribution Certificate? ... yes
+√ Created Apple distribution certificate
+√ Created distribution certificate
+√ Generate a new Apple Provisioning Profile? ... yes
+√ Created Apple provisioning profile
+√ Created provisioning profile
+
+Project Credentials Configuration
+
+Project                   @jabumb/life-changing-journey
+Bundle Identifier         com.lifechangingjourney.app
+
+App Store Configuration
+
+Distribution Certificate
+Serial Number             3809BCF9ED96A26668D1F5A4A81B5CC0
+Expiration Date           Thu, 19 Nov 2026 13:07:15 GMT+0200
+Apple Team                4B3H2MM88X (Vuyani Nyezi (Individual))
+Updated                   11 seconds ago
+
+Provisioning Profile
+Developer Portal ID       L5VQZ35CX5
+Status                    active
+Expiration                Thu, 19 Nov 2026 13:07:15 GMT+0200
+Apple Team                4B3H2MM88X (Vuyani Nyezi (Individual))
+Updated                   2 seconds ago
+
+All credentials are ready to build @jabumb/life-changing-journey (com.lifechangingjourney.app)
+
+
+Compressing project files and uploading to EAS Build. Learn more: https://expo.fyi/eas-build-archive
+√ Compressed project files 2s (13.4 MB)
+√ Uploaded to EAS 3s
+√ Computed project fingerprint
+
+See logs: https://expo.dev/accounts/jabumb/projects/life-changing-journey/builds/59e41d50-5bfa-4598-8bca-8fe6859d0714
+
+Waiting for build to complete. You can press Ctrl+C to exit.
+  Build queued...
+
+Start builds sooner in the priority queue.
+Sign up for a paid plan at https://expo.dev/accounts/jabumb/settings/billing

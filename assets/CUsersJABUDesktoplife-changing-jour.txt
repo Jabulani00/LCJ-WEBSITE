@@ -1,0 +1,47 @@
+C:\Users\JABU\Desktop\life-changing-journey>
+C:\Users\JABU\Desktop\life-changing-journey>eas submit --platform ios --latest
+
+Ensuring your app exists on App Store Connect. This step can be skipped by providing ascAppId in the submit profile. Learn more:
+https://expo.fyi/asc-app-id
+
+› Log in to your Apple Developer account to continue
+√ Apple ID: ... lifechangingjourney84@gmail.com
+› Restoring session C:\Users\JABU\.app-store\auth\lifechangingjourney84@gmail.com\cookie
+› Provider Vuyani Nyezi (128213008)
+√ Logged in Local session
+
+√ Bundle identifier registered com.lifechangingjourney.app
+√ Prepared App Store Connect for Life Changing Journey com.lifechangingjourney.app
+√ TestFlight group created: Team (Expo)
+TestFlight access enabled for: lifechangingjourney84@gmail.com
+Looking up credentials configuration for com.lifechangingjourney.app...
+√ Generate a new App Store Connect API Key? ... yes
+√ Created App Store Connect API Key.
+√ App Store Connect API Key assigned to life-changing-journey: com.lifechangingjourney.app for EAS Submit.
+Using Api Key ID: 86VN8HMUWG ([Expo] EAS Submit 53gfxr8YmC)
+
+ASC App ID:                 6755474250
+Project ID:                 bc265066-d7a0-43c1-ae2c-d7d7a013bff8
+App Store Connect API Key:
+    Key Name  :  [Expo] EAS Submit 53gfxr8YmC
+    Key ID    :  86VN8HMUWG
+    Key Source:  EAS servers
+Build:
+    Build ID    :  59e41d50-5bfa-4598-8bca-8fe6859d0714
+    Build Date  :  2025/11/19, 13:17:41
+    App Version :  1.0.0
+    Build number:  1
+
+√ Scheduled iOS submission
+
+Submission details: https://expo.dev/accounts/jabumb/projects/life-changing-journey/submissions/37c3d2b5-7b3b-4be9-baee-152ada071e5f
+
+Waiting for submission to complete. You can press Ctrl+C to exit.
+√ Submitted your app to Apple App Store Connect!
+
+Your binary has been successfully uploaded to App Store Connect!
+- It is now being processed by Apple - you will receive an email when the processing finishes.
+- It usually takes about 5-10 minutes depending on how busy Apple servers are.
+- When it's done, you can see your build here: https://appstoreconnect.apple.com/apps/6755474250/testflight/ios
+
+C:\Users\JABU\Desktop\life-changing-journey>

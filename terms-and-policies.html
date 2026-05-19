@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<!-- Standalone HTML — no JavaScript. All styles inline. Logo: assets/icon.png -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Life Changing Journey — Terms of Use, Privacy Policy, and legal policies for our mobile app and membership platform.">
+  <meta name="theme-color" content="#012630">
+  <title>Terms &amp; Policies — Life Changing Journey</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-dark: #012630;
+      --brand-dark-2: #011a22;
+      --brand-teal: #0097A7;
+      --brand-pink: #D81F62;
+      --brand-gold: #E6A623;
+      --brand-green: #3A7F3D;
+      --brand-maroon: #6B1636;
+      --text: #1a2e35;
+      --text-muted: #4a6570;
+      --bg: #f4f8f9;
+      --surface: #ffffff;
+      --border: rgba(1, 38, 48, 0.1);
+      --shadow: 0 4px 24px rgba(1, 38, 48, 0.08);
+      --shadow-lg: 0 20px 60px rgba(1, 38, 48, 0.12);
+      --radius: 16px;
+      --radius-sm: 10px;
+      --sidebar-w: 280px;
+      --header-h: 72px;
+      --font: 'Poppins', system-ui, sans-serif;
+      --font-serif: 'Source Serif 4', Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 24px); }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--header-h);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      gap: 1rem;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--brand-dark);
+    }
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(1,38,48,0.15));
+    }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .brand-text strong { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.02em; }
+    .brand-text span { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .header-actions a {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--brand-dark);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      transition: all 0.2s;
+    }
+    .header-actions a:hover { background: var(--brand-dark); color: #fff; border-color: var(--brand-dark); }
+    .header-actions a.primary {
+      background: linear-gradient(135deg, var(--brand-dark), var(--brand-teal));
+      color: #fff;
+      border: none;
+    }
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, var(--brand-dark) 0%, #023e4f 45%, var(--brand-teal) 100%);
+      color: #fff;
+      padding: 3.5rem 1.5rem 4rem;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 90% 20%, rgba(216,31,98,0.25), transparent),
+        radial-gradient(ellipse 60% 50% at 10% 80%, rgba(230,166,35,0.2), transparent),
+        radial-gradient(ellipse 50% 40% at 50% 50%, rgba(58,127,61,0.15), transparent);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 32px rgba(0,0,0,0.3));
+    }
+    .hero h1 {
+      font-family: var(--font);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+    .hero .subtitle {
+      font-size: 1.05rem;
+      opacity: 0.9;
+      margin: 0 0 1.25rem;
+      max-width: 36em;
+      font-weight: 400;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .badge.gold { background: rgba(230,166,35,0.3); border-color: rgba(230,166,35,0.5); }
+    .badge.pink { background: rgba(216,31,98,0.3); border-color: rgba(216,31,98,0.5); }
+
+    /* Layout */
+    .layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: var(--sidebar-w) 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+  .sidebar {
+      position: sticky;
+      top: calc(var(--header-h) + 1.5rem);
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      max-height: calc(100vh - var(--header-h) - 3rem);
+      overflow-y: auto;
+    }
+    .sidebar h2 {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin: 0 0 0.75rem;
+      font-weight: 600;
+    }
+    .sidebar nav ul { list-style: none; margin: 0; padding: 0; }
+    .sidebar nav li { margin: 0; }
+    .sidebar nav a {
+      display: block;
+      padding: 0.4rem 0.6rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      border-radius: var(--radius-sm);
+      border-left: 3px solid transparent;
+      transition: all 0.15s;
+    }
+    .sidebar nav a:hover {
+      color: var(--brand-dark);
+      background: rgba(0, 151, 167, 0.08);
+      border-left-color: var(--brand-teal);
+    }
+
+    /* Mobile TOC — pure HTML <details>, no JavaScript */
+    .toc-mobile { display: none; }
+    .toc-mobile summary {
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brand-dark);
+      padding: 0.75rem 1rem;
+      list-style: none;
+    }
+    .toc-mobile summary::-webkit-details-marker { display: none; }
+    .toc-mobile summary::after { content: ' ▾'; color: var(--brand-teal); }
+    .toc-mobile[open] summary::after { content: ' ▴'; }
+
+    .content {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2.75rem;
+      min-width: 0;
+    }
+
+    .content h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin: 2.5rem 0 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid transparent;
+      border-image: linear-gradient(90deg, var(--brand-teal), var(--brand-pink), var(--brand-gold)) 1;
+      letter-spacing: -0.02em;
+    }
+    .content h2:first-child { margin-top: 0; }
+    .content h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--brand-dark);
+      margin: 1.75rem 0 0.75rem;
+    }
+    .content h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--brand-teal);
+      margin: 1.25rem 0 0.5rem;
+    }
+    .content p { margin: 0 0 1rem; color: var(--text); }
+    .content a {
+      color: var(--brand-teal);
+      font-weight: 500;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .content a:hover { color: var(--brand-pink); }
+    .content code {
+      font-size: 0.85em;
+      background: rgba(1, 38, 48, 0.06);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-family: ui-monospace, monospace;
+    }
+    .legal-list { margin: 0 0 1.25rem; padding-left: 1.35rem; }
+    .legal-list li { margin-bottom: 0.4rem; }
+    .checklist { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+    .checklist li {
+      position: relative;
+      padding: 0.65rem 0.65rem 0.65rem 2.25rem;
+      margin-bottom: 0.5rem;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .checklist li::before {
+      content: '';
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--brand-teal);
+      border-radius: 3px;
+    }
+
+    .table-wrap { display: block; overflow-x: auto; margin: 1rem 0 1.5rem; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    th {
+      background: linear-gradient(180deg, var(--brand-dark), #023e4f);
+      color: #fff;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      white-space: nowrap;
+    }
+    td {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: rgba(244, 248, 249, 0.6); }
+
+    .callout {
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      border-left: 4px solid;
+    }
+    .callout-warning {
+      background: linear-gradient(135deg, rgba(230,166,35,0.12), rgba(216,31,98,0.08));
+      border-left-color: var(--brand-gold);
+    }
+    .callout p { margin: 0; font-size: 0.92rem; }
+    .fine-print { font-size: 0.88rem; color: var(--text-muted); font-style: italic; }
+
+    .legal-section { scroll-margin-top: calc(var(--header-h) + 24px); }
+
+    /* Footer */
+    .site-footer {
+      background: var(--brand-dark);
+      color: rgba(255,255,255,0.85);
+      padding: 2.5rem 1.5rem;
+      margin-top: 2rem;
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .footer-brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+    .footer-brand div strong { display: block; color: #fff; font-size: 1rem; }
+    .footer-brand div span { font-size: 0.8rem; opacity: 0.75; }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .footer-links a:hover { color: var(--brand-gold); }
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      padding-top: 1.5rem;
+      margin-top: 0.5rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    .back-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--brand-pink), var(--brand-gold));
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      font-size: 1.25rem;
+      z-index: 50;
+      transition: transform 0.2s;
+    }
+    .back-top:hover { transform: translateY(-3px); color: #fff; }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar-desktop { display: none; }
+      .toc-mobile {
+        display: block;
+        background: var(--surface);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border);
+        margin-bottom: 1.25rem;
+      }
+      .toc-mobile nav { padding: 0 1rem 1rem; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+      .content { padding: 1.5rem 1.25rem; }
+    }
+
+    @media print {
+      .site-header, .sidebar, .toc-mobile, .back-top, .header-actions { display: none !important; }
+      .hero { background: var(--brand-dark) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .layout { display: block; padding: 0; }
+      .content { box-shadow: none; border: none; }
+      .legal-section { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="assets/icon.png" alt="Life Changing Journey logo" width="48" height="48">
+      <span class="brand-text">
+        <strong>Life Changing Journey</strong>
+        <span>Organisation</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html">Home</a>
+      <a class="primary" href="https://www.lifechangingjourney.co.za/plans" target="_blank" rel="noopener">Membership</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <img class="hero-logo" src="assets/icon.png" alt="Life Changing Journey — tree logo with multicoloured leaves">
+      <div>
+        <h1>Terms of Use, Privacy Policy &amp; Legal Policies</h1>
+        <p class="subtitle">A single transparent document for our mobile app, membership platform, and digital services — protecting our community and Life Changing Journey Organisation.</p>
+        <div class="hero-meta">
+          <span class="badge">Version 1.0</span>
+          <span class="badge gold">Updated 19 May 2026</span>
+          <span class="badge pink">South Africa · POPIA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <details class="toc-mobile">
+      <summary>Jump to section</summary>
+      <nav aria-label="Table of contents (mobile)">
+        <ul>
+          <li><a href="#applies-to">Applies to</a></li>
+          <li><a href="#1-definitions">Definitions</a></li>
+          <li><a href="#2-terms-of-service-terms-of-use">Terms of Service</a></li>
+          <li><a href="#3-privacy-policy">Privacy Policy</a></li>
+          <li><a href="#4-membership-payment-terms">Membership &amp; Payments</a></li>
+          <li><a href="#5-booking-scheduling-terms">Booking &amp; Scheduling</a></li>
+          <li><a href="#6-acceptable-use-policy">Acceptable Use</a></li>
+          <li><a href="#7-health-wellness-professional-services-disclaimer">Health Disclaimer</a></li>
+          <li><a href="#8-financial-services-disclaimer">Financial Disclaimer</a></li>
+          <li><a href="#9-cookie-similar-technologies-policy-web">Cookies</a></li>
+          <li><a href="#10-children-minors">Children &amp; Minors</a></li>
+          <li><a href="#11-protection-of-personal-information-act-popia">POPIA</a></li>
+          <li><a href="#12-account-deletion-data-requests">Account Deletion</a></li>
+          <li><a href="#13-intellectual-property">Intellectual Property</a></li>
+          <li><a href="#14-app-store-platform-notices">App Stores</a></li>
+          <li><a href="#15-contact-data-controller">Contact</a></li>
+          <li><a href="#16-publication-checklist-for-store-deployment">Deployment Checklist</a></li>
+        </ul>
+      </nav>
+    </details>
+
+    <aside class="sidebar sidebar-desktop">
+      <h2>On this page</h2>
+      <nav aria-label="Table of contents">
+        <ul>
+          <li><a href="#applies-to">Applies to</a></li>
+          <li><a href="#1-definitions">Definitions</a></li>
+          <li><a href="#2-terms-of-service-terms-of-use">Terms of Service</a></li>
+          <li><a href="#3-privacy-policy">Privacy Policy</a></li>
+          <li><a href="#4-membership-payment-terms">Membership &amp; Payments</a></li>
+          <li><a href="#5-booking-scheduling-terms">Booking &amp; Scheduling</a></li>
+          <li><a href="#6-acceptable-use-policy">Acceptable Use</a></li>
+          <li><a href="#7-health-wellness-professional-services-disclaimer">Health Disclaimer</a></li>
+          <li><a href="#8-financial-services-disclaimer">Financial Disclaimer</a></li>
+          <li><a href="#9-cookie-similar-technologies-policy-web">Cookies</a></li>
+          <li><a href="#10-children-minors">Children &amp; Minors</a></li>
+          <li><a href="#11-protection-of-personal-information-act-popia">POPIA</a></li>
+          <li><a href="#12-account-deletion-data-requests">Account Deletion</a></li>
+          <li><a href="#13-intellectual-property">Intellectual Property</a></li>
+          <li><a href="#14-app-store-platform-notices">App Stores</a></li>
+          <li><a href="#15-contact-data-controller">Contact</a></li>
+          <li><a href="#16-publication-checklist-for-store-deployment">Deployment Checklist</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <aside class="callout callout-warning">
+        <p><strong>Important — not legal advice.</strong> This document supports app-store submission and user transparency. Life Changing Journey Organisation should have a qualified attorney in South Africa review and customise this text before publication.</p>
+      </aside>
+
+      <section class="legal-section" id="applies-to">
+        <h2>Applies to</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Platform</th><th>Product</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Mobile app</strong></td><td><em>Life Changing Journey</em> (iOS, Google Play, Huawei AppGallery)</td></tr>
+              <tr><td><strong>Membership web</strong></td><td><a href="https://www.lifechangingjourney.co.za" target="_blank" rel="noopener">lifechangingjourney.co.za</a></td></tr>
+              <tr><td><strong>Related websites</strong></td><td>Partner service sites linked from the app</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="legal-section" id="1-definitions"><h2>1. Definitions</h2>
+<div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>“LCJ”, “we”, “us”, “our”</strong></td><td>Life Changing Journey Organisation and its authorised representatives operating the Services.</td></tr><tr><td><strong>“You”, “user”, “member”</strong></td><td>Any person who accesses or uses the Services.</td></tr><tr><td><strong>“Services”</strong></td><td>The Life Changing Journey mobile application, membership website, APIs, content, booking tools, membership features, AI assistant (where enabled), and related support channels.</td></tr><tr><td><strong>“Mobile App”</strong></td><td>The <em>Life Changing Journey</em> client application (bundle ID <code>com.lifechangingjourney.app</code>).</td></tr><tr><td><strong>“Membership Web”</strong></td><td>The Next.js membership portal used to register, sign in, purchase membership, and view entitlements.</td></tr><tr><td><strong>“Account”</strong></td><td>A user profile created via Firebase Authentication (email/password) linked to Firestore records.</td></tr><tr><td><strong>“Membership”</strong></td><td>A once-off paid tier (Silver, Gold, or Platinum) recorded in <code>user_memberships</code> with defined entitlements and validity period.</td></tr><tr><td><strong>“Entitlements”</strong></td><td>Feature access derived from your active membership tier (e.g. priority booking, content library, private community).</td></tr><tr><td><strong>“Booking”</strong></td><td>A scheduled appointment or session request stored in our systems and/or Calendly.</td></tr><tr><td><strong>“Partner services”</strong></td><td>Independent businesses or practitioners promoted or linked through LCJ (e.g. psychology, spiritual interventions, hypnotherapy, financial guidance, educational support, consulting registrations).</td></tr><tr><td><strong>“Third-party providers”</strong></td><td>External platforms that process data on our behalf (e.g. Google Firebase, Stripe, Calendly).</td></tr></tbody></table></div>
+</section>
+<section class="legal-section" id="2-terms-of-service-terms-of-use"><h2>2. Terms of Service (Terms of Use)</h2>
+<h3>2.1 Agreement</h3>
+<p>By downloading, installing, accessing, or using the Services, you agree to these Terms of Service, our Privacy Policy, and any additional terms referenced here (Membership Terms, Booking Terms, disclaimers). If you do not agree, do not use the Services.</p>
+<p>Where you register an Account, you confirm that the information you provide is accurate and that you have authority to accept these Terms (or, for a minor, that a parent/guardian has accepted on your behalf where permitted).</p>
+<h3>2.2 Description of the Services</h3>
+<p>Life Changing Journey provides a <strong>digital client portal and community platform</strong> that helps users:</p>
+<ul class="legal-list">
+<li>Discover and learn about holistic wellness and related services (psychology, spiritual growth, hypnotherapy, integrated services, educational support, and financial guidance information);</li>
+<li>Create and manage an Account;</li>
+<li>Submit enquiries and contact requests;</li>
+<li>Schedule sessions via integrated booking (including Calendly embed where configured);</li>
+<li>View booking history and membership status;</li>
+<li>Access member-only content and features based on entitlements;</li>
+<li>Connect with LCJ through in-app communication channels (contact form, phone, email, WhatsApp links);</li>
+<li>Use an optional AI-powered assistant for general information (where enabled).</li>
+</ul>
+<p>The Mobile App is intended as a <strong>native client experience</strong>, not a substitute for emergency services or crisis intervention.</p>
+<h3>2.3 Eligibility</h3>
+<ul class="legal-list">
+<li>You must be at least <strong>18 years old</strong> to create an Account and purchase Membership, unless we expressly permit supervised use for minors with verifiable parental consent.</li>
+<li>You must have legal capacity to enter into a binding agreement under South African law.</li>
+<li>You may not use the Services if you are barred under applicable law or if we have suspended or terminated your Account.</li>
+</ul>
+<h3>2.4 Account registration &amp; security</h3>
+<ul class="legal-list">
+<li>Accounts are created using <strong>email and password</strong> via Firebase Authentication.</li>
+<li>You are responsible for safeguarding your credentials and for all activity under your Account.</li>
+<li>Notify us immediately at <strong>info@lifechangingjourney.co.za</strong> if you suspect unauthorised access.</li>
+<li>We may suspend or terminate Accounts that violate these Terms, pose security risks, or contain false information.</li>
+</ul>
+<h3>2.5 Membership &amp; payments</h3>
+<ul class="legal-list">
+<li>Paid Membership is primarily completed on the <strong>Membership Web</strong> via <strong>Stripe Checkout</strong> (South African Rand — ZAR).</li>
+<li>The Mobile App may display your membership status and entitlements and link you to the web for purchase or upgrade.</li>
+<li>Membership fees, tiers, benefits, discounts, and session limits are described in <a href="#4-membership--payment-terms">Section 4</a> and in-app/on the website at the time of purchase.</li>
+<li><strong>Membership is not a subscription to clinical treatment</strong> and does not guarantee outcomes, availability of specific practitioners, or immediate service delivery.</li>
+</ul>
+<h3>2.6 Bookings &amp; appointments</h3>
+<ul class="legal-list">
+<li>Bookings may be created through Calendly integration, in-app flows, and server webhooks that sync to our database.</li>
+<li>Booking availability may depend on your membership tier, operating hours, and practitioner schedules.</li>
+<li>See <a href="#5-booking--scheduling-terms">Section 5</a> for cancellation, rescheduling, and no-show rules.</li>
+</ul>
+<h3>2.7 User content &amp; communications</h3>
+<p>You may submit information including name, email, phone, messages, service interests, and booking notes. You represent that:</p>
+<ul class="legal-list">
+<li>Your content is lawful and does not infringe third-party rights;</li>
+<li>You will not submit sensitive special personal information unless necessary and with informed consent (e.g. health details in a contact message);</li>
+<li>We may use your submissions to respond, provide Services, improve operations, and maintain records as described in the Privacy Policy.</li>
+</ul>
+<h3>2.8 Prohibited conduct</h3>
+<p>See <a href="#6-acceptable-use-policy">Section 6 — Acceptable Use Policy</a>.</p>
+<h3>2.9 Third-party services &amp; links</h3>
+<p>The Services may link to or embed third-party websites, payment pages, scheduling tools, social media, partner businesses, and educational content. We do not control third-party terms or privacy practices. Your use of those services is at your own risk and subject to their policies.</p>
+<h3>2.10 Service changes &amp; availability</h3>
+<p>We may modify, suspend, or discontinue any part of the Services (including features, membership benefits, or integrations) with reasonable notice where practicable. We do not guarantee uninterrupted or error-free operation. Maintenance, network failures, and third-party outages may affect availability.</p>
+<h3>2.11 Termination</h3>
+<ul class="legal-list">
+<li><strong>By you:</strong> You may stop using the Services and request Account deletion (see <a href="#12-account-deletion--data-requests">Section 12</a>).</li>
+<li><strong>By us:</strong> We may suspend or terminate access for breach of Terms, fraud, abuse, legal requirements, or prolonged inactivity, subject to applicable law.</li>
+</ul>
+<p>Upon termination, rights granted to you cease; provisions that by nature should survive (disclaimers, limitation of liability, dispute resolution) remain in effect.</p>
+<h3>2.12 Disclaimers</h3>
+<p>THE SERVICES ARE PROVIDED <strong>“AS IS”</strong> AND <strong>“AS AVAILABLE”</strong> WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+<p>See also <a href="#7-health-wellness--professional-services-disclaimer">Section 7</a> and <a href="#8-financial-services-disclaimer">Section 8</a>.</p>
+<h3>2.13 Limitation of liability</h3>
+<p>To the fullest extent permitted by <strong>South African law</strong>:</p>
+<ul class="legal-list">
+<li>LCJ and its directors, employees, contractors, and partners are <strong>not liable</strong> for indirect, incidental, special, consequential, or punitive damages, or for loss of profits, data, goodwill, or business interruption.</li>
+<li>Our <strong>total aggregate liability</strong> for claims arising from or related to the Services shall not exceed the greater of: (a) the amount you paid to LCJ for Membership in the <strong>12 months</strong> before the claim; or (b) <strong>ZAR 1,000</strong>.</li>
+</ul>
+<p>Nothing in these Terms excludes liability that cannot be excluded by law (including gross negligence or wilful misconduct where applicable).</p>
+<h3>2.14 Indemnity</h3>
+<p>You agree to indemnify and hold harmless LCJ against claims, damages, losses, and expenses (including reasonable legal fees) arising from your breach of these Terms, misuse of the Services, or violation of any law or third-party rights.</p>
+<h3>2.15 Governing law &amp; disputes</h3>
+<p>These Terms are governed by the laws of the <strong>Republic of South Africa</strong>.</p>
+<p>Disputes shall first be addressed through good-faith negotiation. If unresolved, parties submit to the <strong>exclusive jurisdiction of the courts of South Africa</strong> in the province where LCJ is domiciled (currently <strong>KwaZulu-Natal</strong>), unless mandatory consumer protection law provides otherwise.</p>
+<h3>2.16 Changes to these Terms</h3>
+<p>We may update these Terms by posting a revised version with a new “Last updated” date. Material changes may be notified in-app or by email where appropriate. Continued use after the effective date constitutes acceptance.</p>
+<h3>2.17 Language</h3>
+<p>The authoritative version of these documents is <strong>English</strong>. Translations, if provided, are for convenience only.</p>
+</section>
+<section class="legal-section" id="3-privacy-policy"><h2>3. Privacy Policy</h2>
+<h3>3.1 Who we are</h3>
+<p><strong>Life Changing Journey Organisation</strong> (“LCJ”) is the responsible party for personal information processed through the Services, unless stated otherwise for a specific partner service.</p>
+<p><strong>Contact:</strong> See <a href="#15-contact--data-controller">Section 15</a>.</p>
+<h3>3.2 Scope</h3>
+<p>This Privacy Policy applies to personal information collected through:</p>
+<ul class="legal-list">
+<li>The Life Changing Journey <strong>Mobile App</strong>;</li>
+<li>The <strong>Membership Web</strong> and checkout flows;</li>
+<li><strong>Contact forms</strong>, booking flows, and support channels linked from the app;</li>
+<li><strong>Cloud Functions</strong> and webhooks (e.g. Calendly → Firestore);</li>
+<li>Optional features such as push notifications and AI chat (when enabled).</li>
+</ul>
+<h3>3.3 Summary</h3>
+<div class="table-wrap"><table><thead><tr><th>We do</th><th>We do not (by default)</th></tr></thead><tbody><tr><td>Collect information you provide when registering, booking, contacting us, or purchasing membership</td><td>Sell your personal information to data brokers</td></tr><tr><td>Use Firebase to authenticate and store profile, booking, and membership data</td><td>Use your data for unrelated third-party advertising</td></tr><tr><td>Use payment processors (Stripe) for membership purchases on the web</td><td>Store full card numbers on LCJ servers (handled by Stripe)</td></tr><tr><td>Use scheduling tools (Calendly) when you book appointments</td><td>Guarantee absolute security (we apply reasonable safeguards)</td></tr><tr><td>Process data to deliver entitlements, support, and service operations</td><td></td></tr></tbody></table></div>
+<h3>3.4 Information we collect</h3>
+<h4>A. Information you provide directly</h4>
+<div class="table-wrap"><table><thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Account</strong></td><td>Email, password (hashed by Firebase), display name</td><td>Authentication, profile</td></tr><tr><td><strong>Profile</strong></td><td>Full name, plan tier, member category (children/adults/couples)</td><td>Personalisation, entitlements</td></tr><tr><td><strong>Contact</strong></td><td>Name, email, phone, subject, message, service interest</td><td>Respond to enquiries</td></tr><tr><td><strong>Booking</strong></td><td>Service type, date/time, notes, Calendly event details</td><td>Scheduling, history, staff follow-up</td></tr><tr><td><strong>Membership</strong></td><td>Plan purchased, member type, transaction references</td><td>Entitlements, receipts, support</td></tr><tr><td><strong>Communications</strong></td><td>Support emails, WhatsApp messages initiated by you</td><td>Customer service</td></tr></tbody></table></div>
+<h4>B. Information collected automatically</h4>
+<div class="table-wrap"><table><thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Device &amp; app</strong></td><td>Device type, OS version, app version, crash logs (if enabled)</td><td>Stability, security</td></tr><tr><td><strong>Usage</strong></td><td>Screens viewed, feature interactions (if analytics enabled)</td><td>Improve Services</td></tr><tr><td><strong>Notifications</strong></td><td>Push token (if you opt in)</td><td>Booking reminders, updates</td></tr><tr><td><strong>Permissions-based</strong> (only if you grant and feature is used)</td><td>Camera/photos (profile image), phone (tap-to-call), location (nearby services)</td><td>Feature delivery per permission prompt</td></tr></tbody></table></div>
+<h4>C. Information from third parties</h4>
+<div class="table-wrap"><table><thead><tr><th>Source</th><th>Data</th></tr></thead><tbody><tr><td><strong>Stripe</strong></td><td>Payment status, checkout session ID, amount, currency — not full card data</td></tr><tr><td><strong>Calendly</strong></td><td>Invitee name, email, scheduled event time, cancellation status</td></tr><tr><td><strong>Firebase</strong></td><td>Authentication identifiers (<code>uid</code>), security events</td></tr><tr><td><strong>App stores</strong></td><td>Download region, purchase receipts (for store billing if ever used)</td></tr></tbody></table></div>
+<h3>3.5 How we use personal information</h3>
+<p>We process personal information to:</p>
+<ol class="legal-list">
+<li>Provide and maintain the Services;</li>
+<li>Authenticate users and enforce entitlements;</li>
+<li>Process membership purchases and record transactions;</li>
+<li>Schedule, confirm, and manage bookings;</li>
+<li>Communicate with you (responses, reminders where enabled, service updates);</li>
+<li>Operate admin tools for staff (booking queue, tasks, events);</li>
+<li>Improve security, prevent fraud and abuse;</li>
+<li>Comply with legal obligations;</li>
+<li>Send marketing only where you have <strong>opted in</strong> (you may opt out at any time).</li>
+</ol>
+<p><strong>Legal bases (POPIA / general):</strong> consent, contract performance, legitimate interests (operating and securing the Services), and legal obligation.</p>
+<h3>3.6 Sharing &amp; disclosure</h3>
+<p>We may share personal information with:</p>
+<div class="table-wrap"><table><thead><tr><th>Recipient</th><th>Reason</th></tr></thead><tbody><tr><td><strong>Service providers</strong></td><td>Hosting (Google Cloud / Firebase), payments (Stripe), scheduling (Calendly), email delivery, AI API (Google Gemini — if chatbot enabled), Expo push infrastructure</td></tr><tr><td><strong>Partner practitioners / businesses</strong></td><td>Only as needed to fulfil a service you requested (e.g. referral to financial or psychology partner)</td></tr><tr><td><strong>Authorities</strong></td><td>When required by law, court order, or to protect rights and safety</td></tr><tr><td><strong>Business transfers</strong></td><td>In connection with merger, acquisition, or asset sale (with notice where required)</td></tr></tbody></table></div>
+<p>We require processors to handle data under confidentiality and security obligations appropriate to their role.</p>
+<p>We <strong>do not sell</strong> personal information.</p>
+<h3>3.7 International transfers</h3>
+<p>Firebase, Stripe, Calendly, and other providers may process data in countries outside South Africa (including the United States and European Union). Where required, we rely on appropriate safeguards (contractual clauses, provider certifications, and your consent where applicable).</p>
+<h3>3.8 Retention</h3>
+<div class="table-wrap"><table><thead><tr><th>Data type</th><th>Typical retention</th></tr></thead><tbody><tr><td>Account &amp; profile</td><td>While Account is active + reasonable period after deletion request</td></tr><tr><td>Bookings &amp; contacts</td><td>As needed for operations, disputes, and legal record-keeping (often up to <strong>5 years</strong> unless longer required)</td></tr><tr><td>Transactions</td><td>As required for tax and financial record-keeping</td></tr><tr><td>Logs &amp; security</td><td>Short to medium term unless needed for incident investigation</td></tr></tbody></table></div>
+<p>We delete or anonymise data when no longer needed, unless retention is required by law.</p>
+<h3>3.9 Security</h3>
+<p>We implement administrative, technical, and organisational measures including:</p>
+<ul class="legal-list">
+<li>Firebase Authentication and Firestore access rules (membership writes restricted to server/webhooks);</li>
+<li>HTTPS for web and API traffic;</li>
+<li>Stripe-hosted checkout for card payments;</li>
+<li>Least-privilege access for administrators.</li>
+</ul>
+<p>No system is 100% secure. Report concerns to <strong>info@lifechangingjourney.co.za</strong>.</p>
+<h3>3.10 Your rights</h3>
+<p>Subject to POPIA and applicable law, you may:</p>
+<ul class="legal-list">
+<li><strong>Access</strong> personal information we hold about you;</li>
+<li><strong>Correct</strong> inaccurate information;</li>
+<li><strong>Delete</strong> information (see <a href="#12-account-deletion--data-requests">Section 12</a>);</li>
+<li><strong>Object</strong> to or <strong>restrict</strong> certain processing;</li>
+<li><strong>Withdraw consent</strong> where processing is consent-based;</li>
+<li><strong>Lodge a complaint</strong> with the Information Regulator (South Africa).</li>
+</ul>
+<p>We will respond within a reasonable period (typically <strong>30 days</strong>).</p>
+<h3>3.11 Automated decision-making &amp; AI assistant</h3>
+<p>Where the in-app assistant (e.g. powered by Google Gemini) is enabled:</p>
+<ul class="legal-list">
+<li>Responses are <strong>informational only</strong>, not professional advice;</li>
+<li>Do not submit highly sensitive health or financial details you would not share in an open channel;</li>
+<li>Conversations may be processed by the AI provider according to their terms.</li>
+</ul>
+<p>We do not make solely automated decisions with legal or similarly significant effects without human review.</p>
+<h3>3.12 Changes to this Privacy Policy</h3>
+<p>We will post updates with a revised “Last updated” date. Material changes may be highlighted in-app or on the website.</p>
+</section>
+<section class="legal-section" id="4-membership-payment-terms"><h2>4. Membership &amp; payment terms</h2>
+<h3>4.1 Membership model</h3>
+<p>LCJ offers <strong>once-off membership packages</strong> in South African Rand (ZAR), tiered as <strong>Silver</strong>, <strong>Gold</strong>, and <strong>Platinum</strong>, with pricing that varies by member category:</p>
+<div class="table-wrap"><table><thead><tr><th>Tier</th><th>Children (ZAR)</th><th>Adults (ZAR)</th><th>Couples (ZAR)</th></tr></thead><tbody><tr><td>Silver</td><td>100</td><td>100</td><td>100</td></tr><tr><td>Gold</td><td>199</td><td>299</td><td>499</td></tr><tr><td>Platinum</td><td>399</td><td>599</td><td>899</td></tr></tbody></table></div>
+<p>Prices and benefits shown in-app or on the Membership Web at checkout are authoritative if they differ from this table.</p>
+<h3>4.2 Purchase channel</h3>
+<ul class="legal-list">
+<li><strong>Primary checkout:</strong> Membership Web (<code>/plans</code>) via <strong>Stripe Checkout</strong>.</li>
+<li><strong>Mobile App:</strong> Displays status and may deep-link or open the web for payment. The app does not store card details.</li>
+<li>When Stripe is not configured in a development environment, a <strong>mock payment</strong> mode may be used — not for production consumer billing.</li>
+</ul>
+<h3>4.3 Activation &amp; entitlements</h3>
+<ul class="legal-list">
+<li>Membership becomes <strong>active</strong> after successful payment confirmation (Stripe webhook / server verification).</li>
+<li>Entitlements (e.g. priority booking, content library, private community, coaching session caps) are defined per tier in our entitlement mapping.</li>
+<li>If <code>status</code> is not active or <code>endAt</code> has passed, entitlements may be suspended on the client and server.</li>
+</ul>
+<h3>4.4 Benefits (summary)</h3>
+<p>Benefits are <strong>descriptions of platform features and service access levels</strong>, not guarantees of clinical outcomes. Illustrative tier features include:</p>
+<ul class="legal-list">
+<li><strong>Silver:</strong> Community access, service information, updates;</li>
+<li><strong>Gold:</strong> Priority booking, discounts, reminders, progress tracking, content library, monthly coaching session allocation (per plan limits);</li>
+<li><strong>Platinum:</strong> Enhanced discounts, 24-hour booking access window, call reminders, private community, meditation and weekly progress session allocations, broader content access.</li>
+</ul>
+<p>Exact entitlements are implemented in software and may be updated with notice.</p>
+<h3>4.5 Discounts &amp; session limits</h3>
+<ul class="legal-list">
+<li><strong>Booking discounts:</strong> Gold (10%), Platinum (20%) where applicable in booking flows.</li>
+<li><strong>Monthly session caps</strong> (examples): Gold — 1 coaching session/month; Platinum — coaching, meditation, and weekly progress sessions per configured limits.</li>
+<li>Limits are enforced in the app client; production deployments should add server-side validation.</li>
+</ul>
+<h3>4.6 Refunds &amp; cancellations</h3>
+<p>Unless required by South African consumer law or expressly stated at purchase:</p>
+<ul class="legal-list">
+<li>Membership fees are <strong>generally non-refundable</strong> once activated, except where we cancel the membership or fail to provide the purchased digital entitlements.</li>
+<li><strong>Chargebacks:</strong> Fraudulent chargebacks may result in Account suspension.</li>
+<li>Refund requests: <strong>info@lifechangingjourney.co.za</strong> with proof of purchase and reason.</li>
+</ul>
+<h3>4.7 Taxes</h3>
+<p>Prices may be inclusive or exclusive of VAT as indicated at checkout. Tax invoices will be provided where applicable and required by law.</p>
+<h3>4.8 Failed payments</h3>
+<p>If payment fails or is pending, membership will not activate until confirmation. Do not rely on entitlements until your dashboard shows an active status.</p>
+</section>
+<section class="legal-section" id="5-booking-scheduling-terms"><h2>5. Booking &amp; scheduling terms</h2>
+<h3>5.1 How booking works</h3>
+<p>Bookings may be made through:</p>
+<ul class="legal-list">
+<li><strong>Calendly</strong> embed in the Mobile App (when <code>EXPO_PUBLIC_CALENDLY_EMBED_URL</code> is configured);</li>
+<li>Legacy or supplementary in-app booking flows writing to Firestore <code>bookings</code>;</li>
+<li><strong>Calendly webhooks</strong> (Cloud Functions) syncing invitee.created / invitee.canceled events.</li>
+</ul>
+<p>You must be <strong>signed in</strong> for bookings to attach to your Account where required.</p>
+<h3>5.2 Operating hours &amp; tier access</h3>
+<ul class="legal-list">
+<li>Non-Platinum tiers may be limited to booking UI during configured <strong>operating hours</strong> (e.g. 08:00–18:00 local time).</li>
+<li><strong>Platinum</strong> may include extended / 24-hour booking access as described in-product.</li>
+</ul>
+<h3>5.3 Confirmation &amp; status</h3>
+<p>Bookings may show statuses such as <strong>pending</strong>, <strong>confirmed</strong>, <strong>completed</strong>, or <strong>cancelled</strong>. Confirmation depends on practitioner availability and manual review where applicable.</p>
+<h3>5.4 Cancellations &amp; rescheduling</h3>
+<ul class="legal-list">
+<li>Cancel or reschedule through Calendly where available, or contact us at <strong>info@lifechangingjourney.co.za</strong> / <strong>+27 31 035 0208</strong>.</li>
+<li>Provide at least <strong>24 hours’ notice</strong> where possible to avoid fees or forfeiture of session allocations.</li>
+<li>Repeated no-shows may limit future booking privileges.</li>
+</ul>
+<h3>5.5 Reminders</h3>
+<p>Gold and Platinum tiers may include reminder features (in-app flags, staff tasks). Push/email delivery depends on device permissions and infrastructure — not guaranteed in all builds.</p>
+<h3>5.6 Third-party scheduling</h3>
+<p>When you use Calendly, their privacy policy and terms also apply. We receive event data necessary to display your bookings in the app.</p>
+</section>
+<section class="legal-section" id="6-acceptable-use-policy"><h2>6. Acceptable use policy</h2>
+<p>You agree <strong>not</strong> to:</p>
+<ol class="legal-list">
+<li>Violate any applicable law or regulation;</li>
+<li>Impersonate any person or misrepresent affiliation with LCJ or partners;</li>
+<li>Harass, threaten, defame, or discriminate against others;</li>
+<li>Upload malware, scrape, reverse engineer, or attempt unauthorised access to systems;</li>
+<li>Use the Services for spam, pyramid schemes, or unauthorised commercial solicitation;</li>
+<li>Collect other users’ data without consent;</li>
+<li>Submit false booking or payment information;</li>
+<li>Circumvent membership entitlements, session limits, or security controls;</li>
+<li>Use the AI assistant to generate illegal, harmful, or explicit content;</li>
+<li>Record or distribute confidential sessions without consent of all parties and applicable law.</li>
+</ol>
+<p>We may investigate violations and cooperate with law enforcement where required.</p>
+</section>
+<section class="legal-section" id="7-health-wellness-professional-services-disclaimer"><h2>7. Health, wellness &amp; professional services disclaimer</h2>
+<ol class="legal-list">
+<li><strong>Not medical care:</strong> The Services and content (including articles, tips, chatbot responses, podcasts, and motivational materials) are for <strong>general information, education, and support</strong>. They <strong>do not</strong> constitute medical, psychiatric, psychological diagnosis, or treatment.</li>
+</ol>
+<ol class="legal-list">
+<li><strong>Emergency:</strong> If you are in crisis or may harm yourself or others, contact <strong>emergency services immediately</strong> (South Africa: <strong>112</strong> / <strong>10111</strong>) or a local crisis line. The app is <strong>not</strong> an emergency service.</li>
+</ol>
+<ol class="legal-list">
+<li><strong>Qualified professionals:</strong> Psychology, hypnotherapy, spiritual, and integrated services may be delivered by <strong>independent practitioners</strong> or partner entities. LCJ facilitates access and information; clinical responsibility lies with the licensed or qualified provider conducting the session.</li>
+</ol>
+<ol class="legal-list">
+<li><strong>No guarantee of outcomes:</strong> Wellness journeys are individual. We do not guarantee specific health, mental health, or spiritual outcomes.</li>
+</ol>
+<ol class="legal-list">
+<li><strong>Your responsibility:</strong> Consult a qualified healthcare provider before making health decisions. Do not discontinue prescribed treatment based on app content.</li>
+</ol>
+<ol class="legal-list">
+<li><strong>Children:</strong> Services for children require parental/guardian involvement and appropriate professional consent.</li>
+</ol>
+<p class="fine-print">This aligns with in-app disclaimers on membership screens: “This platform provides guidance and support. It does not replace professional medical or psychiatric diagnosis.”</p>
+</section>
+<section class="legal-section" id="8-financial-services-disclaimer"><h2>8. Financial services disclaimer</h2>
+<ol class="legal-list">
+<li><strong>Separate regulated entities:</strong> Financial guidance, loans, and credit services promoted through LCJ may be offered by <strong>Tshabalala Omhle Financial Group</strong> or other <strong>NCR-registered</strong> providers (e.g. registration <strong>NCRCP20083</strong> where stated in-app). LCJ is <strong>not</strong> a registered credit provider unless separately stated.</li>
+</ol>
+<ol class="legal-list">
+<li><strong>Not financial advice:</strong> General content in the app is <strong>not</strong> personal financial advice, investment advice, or a recommendation to enter any credit agreement.</li>
+</ol>
+<ol class="legal-list">
+<li><strong>Responsible lending:</strong> Credit products are subject to <strong>affordability assessments</strong>, <strong>National Credit Act</strong> requirements, and the provider’s terms. “Financial services are subject to responsible lending practices” (in-app disclaimer).</li>
+</ol>
+<ol class="legal-list">
+<li><strong>Third-party websites:</strong> Links to <code>tshabalalafinance.co.za</code> and similar sites are governed by those entities’ policies.</li>
+</ol>
+<ol class="legal-list">
+<li><strong>No guarantee:</strong> LCJ does not guarantee loan approval, interest rates, or financial results.</li>
+</ol>
+<p>For financial product queries, contact the relevant provider directly using details shown in the Financial Guidance section of the app.</p>
+</section>
+<section class="legal-section" id="9-cookie-similar-technologies-policy-web"><h2>9. Cookie &amp; similar technologies policy (web)</h2>
+<p>Applies to the <strong>Membership Web</strong> and any LCJ website using cookies.</p>
+<div class="table-wrap"><table><thead><tr><th>Type</th><th>Purpose</th></tr></thead><tbody><tr><td><strong>Strictly necessary</strong></td><td>Authentication session cookies (Firebase session), security</td></tr><tr><td><strong>Functional</strong></td><td>Remember preferences, checkout state</td></tr><tr><td><strong>Analytics</strong></td><td>Understand usage (only if enabled, with consent where required)</td></tr></tbody></table></div>
+<p>You can control cookies through browser settings. Blocking necessary cookies may prevent login or checkout.</p>
+<p>We do not use cookies on the native Mobile App in the same way; the app may use local storage (e.g. AsyncStorage) for session and preferences.</p>
+<p><strong>Third-party cookies:</strong> Stripe and Firebase may set cookies during checkout/auth.</p>
+</section>
+<section class="legal-section" id="10-children-minors"><h2>10. Children &amp; minors</h2>
+<ul class="legal-list">
+<li>The Services are directed primarily to <strong>adults (18+)</strong>.</li>
+<li>We do not knowingly collect personal information from children under <strong>13</strong> without parental consent.</li>
+<li>Membership categories may include <strong>“Children”</strong> pricing for family plans supervised by a parent/guardian account holder.</li>
+<li>If you believe we collected a child’s data improperly, contact <strong>info@lifechangingjourney.co.za</strong> and we will delete it.</li>
+</ul>
+</section>
+<section class="legal-section" id="11-protection-of-personal-information-act-popia"><h2>11. Protection of Personal Information Act (POPIA)</h2>
+<p>LCJ processes personal information in accordance with the <strong>Protection of Personal Information Act 4 of 2013 (POPIA)</strong>.</p>
+<div class="table-wrap"><table><thead><tr><th>POPIA topic</th><th>Our approach</th></tr></thead><tbody><tr><td><strong>Lawful processing</strong></td><td>Consent, contract, legitimate interest, legal duty</td></tr><tr><td><strong>Purpose specification</strong></td><td>Collected for defined purposes in this policy</td></tr><tr><td><strong>Further processing</strong></td><td>Compatible purposes only</td></tr><tr><td><strong>Information quality</strong></td><td>Users may correct profile data</td></tr><tr><td><strong>Security safeguards</strong></td><td>Reasonable technical and organisational measures</td></tr><tr><td><strong>Data subject participation</strong></td><td>Access, correction, deletion requests honoured per law</td></tr><tr><td><strong>Information Officer</strong></td><td>Contact details in Section 15 — appoint and register as required</td></tr></tbody></table></div>
+<p><strong>Information Regulator (South Africa):</strong></p>
+<p>Website: https://www.justice.gov.za/inforeg/</p>
+<p>Complaints may be directed to the Regulator if not resolved with us.</p>
+</section>
+<section class="legal-section" id="12-account-deletion-data-requests"><h2>12. Account deletion &amp; data requests</h2>
+<h3>12.1 How to request deletion</h3>
+<p>Email <strong>info@lifechangingjourney.co.za</strong> from your registered address with subject <strong>“Account deletion request”</strong> and include:</p>
+<ul class="legal-list">
+<li>Full name;</li>
+<li>Registered email;</li>
+<li>Whether you want <strong>full deletion</strong> or <strong>anonymisation</strong> of booking history.</li>
+</ul>
+<p>We will verify identity before processing.</p>
+<h3>12.2 What we delete</h3>
+<ul class="legal-list">
+<li>Firebase Authentication user (where technically feasible);</li>
+<li>Firestore <code>users/{uid}</code> profile;</li>
+<li><code>user_memberships/{uid}</code> (subject to financial record retention);</li>
+<li>Associated bookings/contacts where retention is not legally required.</li>
+</ul>
+<h3>12.3 What we may retain</h3>
+<ul class="legal-list">
+<li>Transaction records for tax/audit;</li>
+<li>Information necessary for legal claims or regulatory compliance;</li>
+<li>Aggregated, non-identifying analytics.</li>
+</ul>
+<h3>12.4 Store-specific deletion (Apple)</h3>
+<p>Apple App Store users may also use <strong>Account Deletion</strong> requirements: provide an in-app path or web link. Recommended: Settings → Profile → “Delete account” linking to this process, or email flow above documented in App Store Connect notes.</p>
+</section>
+<section class="legal-section" id="13-intellectual-property"><h2>13. Intellectual property</h2>
+<ul class="legal-list">
+<li><strong>LCJ content</strong> (logos, text, graphics, app design, videos, podcasts) is owned by LCJ or licensors and protected by copyright and trademark law.</li>
+<li>You receive a <strong>limited, non-exclusive, non-transferable licence</strong> to use the Services for personal, non-commercial purposes.</li>
+<li>You may not copy, modify, distribute, or create derivative works without written permission.</li>
+<li><strong>User content</strong> you submit remains yours; you grant LCJ a licence to use it to operate the Services.</li>
+</ul>
+</section>
+<section class="legal-section" id="14-app-store-platform-notices"><h2>14. App store &amp; platform notices</h2>
+<h3>14.1 Apple App Store</h3>
+<ul class="legal-list">
+<li><strong>Privacy Policy URL</strong> (required): use this combined document at one public HTTPS URL, e.g. <code>https://www.lifechangingjourney.co.za/legal/terms-and-policies</code></li>
+<li><strong>Terms of Use (EULA):</strong> Link to the same URL, or use standard Apple EULA and reference this document in the app description</li>
+<li><strong>Account deletion:</strong> Required for apps with account creation — implement link per Section 12</li>
+<li><strong>App Privacy labels:</strong> Declare contact info, identifiers, user content, purchase history, and other data per actual collection (Firebase, Stripe redirect, Calendly, notifications)</li>
+<li><strong>Permissions declared</strong> (<code>app.json</code>): phone, camera, photo library, location when in use — align Privacy Nutrition Labels with actual use</li>
+</ul>
+<h3>14.2 Google Play</h3>
+<ul class="legal-list">
+<li><strong>Privacy policy URL</strong> (required) in Play Console</li>
+<li><strong>Data safety form:</strong> Declare data types, encryption in transit, optional deletion</li>
+<li><strong>Health app declaration</strong> if categorized under Health &amp; Fitness — clarify app is a portal, not a medical device</li>
+<li><strong>Financial features declaration</strong> if linking to credit services</li>
+<li><strong>Target audience &amp; content rating</strong> questionnaire accurate to content</li>
+</ul>
+<h3>14.3 Huawei AppGallery</h3>
+<ul class="legal-list">
+<li>Privacy policy and user agreement URLs required</li>
+<li>Data processing disclosure for users in applicable regions</li>
+<li>Permission list must match APK permissions</li>
+<li>Ensure APK signing and package name <code>com.lifechangingjourney.app</code> consistency</li>
+</ul>
+<h3>14.4 In-app acceptance</h3>
+<p>The registration screen states: <em>“By signing up you agree to our Terms of Service and Privacy Policy.”</em></p>
+<p>Link both labels to <strong>this single hosted URL</strong> before store submission.</p>
+</section>
+<section class="legal-section" id="15-contact-data-controller"><h2>15. Contact &amp; data controller</h2>
+<div class="table-wrap"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>--</td><td>--</td></tr><tr><td><strong>Organisation</strong></td><td>Life Changing Journey Organisation</td></tr><tr><td><strong>Location</strong></td><td>Durban, KwaZulu-Natal, South Africa</td></tr><tr><td><strong>General email</strong></td><td>info@lifechangingjourney.co.za</td></tr><tr><td><strong>Phone</strong></td><td>+27 31 035 0208</td></tr><tr><td><strong>WhatsApp</strong></td><td>+27 65 846 0441</td></tr><tr><td><strong>Website</strong></td><td>https://www.lifechangingjourney.co.za</td></tr><tr><td><strong>Information Officer</strong></td><td><em>[Appoint name &amp; email — e.g. info@lifechangingjourney.co.za]</em></td></tr><tr><td><strong>Registration</strong></td><td><em>[Company/NPO registration number if applicable]</em></td></tr></tbody></table></div>
+<p><strong>Partner contact (examples referenced in-app — not LCJ data controllers):</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Partner</th><th>Contact</th></tr></thead><tbody><tr><td>Psychology (Vuyani Nyezi)</td><td>+27 67 280 3432</td></tr><tr><td>Tshabalala Omhle Financial Group</td><td>+27 69 308 4723</td></tr><tr><td>Nyezi Vuyani Foundation</td><td>+27 74 067 4650</td></tr></tbody></table></div>
+</section>
+<section class="legal-section" id="16-publication-checklist-for-store-deployment"><h2>16. Publication checklist for store deployment</h2>
+<p>Use this checklist before submitting to <strong>Apple</strong>, <strong>Google</strong>, and <strong>Huawei</strong>:</p>
+<ul class="legal-list">
+<li>[ ] Attorney review completed for South Africa (POPIA, NCA, consumer law, health claims)</li>
+<li>[ ] Information Officer appointed and POPIA registration completed if required</li>
+<li>[ ] Company/NPO registration details inserted in Section 15</li>
+<li>[ ] Host <strong>this combined file</strong> at one stable HTTPS URL (use the same URL for Privacy Policy and Terms in all stores)</li>
+<li>[ ] Update <code>RegisterScreen</code> / login to open those URLs (replace plain text with links)</li>
+<li>[ ] Replace outdated <code>privacy.html</code> in repo root OR redirect it to the new policy</li>
+<li>[ ] App Store Connect: Privacy Policy URL, support URL, demo account for reviewers</li>
+<li>[ ] Google Play: Data safety + content rating + financial/health declarations</li>
+<li>[ ] Huawei: User agreement + privacy URLs + permission justification</li>
+<li>[ ] Privacy labels match real data flows (Firebase, Calendly, Stripe web, optional Gemini, push)</li>
+<li>[ ] Account deletion process documented and accessible in-app</li>
+<li>[ ] Confirm production uses <strong>Stripe</strong> (not mock payments) on Membership Web</li>
+<li>[ ] Tighten Firestore security rules for production (bookings/contacts currently permissive in dev rules)</li>
+</ul>
+<p><strong>Store URL:</strong> Use one link everywhere — <code>https://www.lifechangingjourney.co.za/legal/terms-and-policies</code> (or host this <code>.md</code> as HTML at that path).</p>
+</section>
+<section class="legal-section" id="document-history"><h2>Document history</h2>
+<div class="table-wrap"><table><thead><tr><th>Version</th><th>Date</th><th>Notes</th></tr></thead><tbody><tr><td>1.0</td><td>19 May 2026</td><td>Initial comprehensive policy from Expo app + membership-web codebase review</td></tr></tbody></table></div>
+<p class="fine-print">© Life Changing Journey Organisation. All rights reserved.</p>
+</section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="assets/icon.png" alt="Life Changing Journey logo">
+        <div>
+          <strong>Life Changing Journey Organisation</strong>
+          <span>Durban, KwaZulu-Natal, South Africa</span>
+        </div>
+      </div>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="mailto:info@lifechangingjourney.co.za">info@lifechangingjourney.co.za</a>
+        <a href="tel:+27310350208">+27 31 035 0208</a>
+        <a href="https://wa.me/27658460441" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="index.html">Home</a>
+        <a href="https://www.lifechangingjourney.co.za" target="_blank" rel="noopener">Website</a>
+      </nav>
+      <p class="footer-copy">© 2026 Life Changing Journey Organisation. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-top" aria-label="Back to top">↑</a>
+</body>
+</html>
