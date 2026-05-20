@@ -79,6 +79,7 @@
   let lastSpawn = -999;
   let sectionVisible = true;
   let theme = {};
+  let treeScale = 1;
 
   const MAX_LV = 8;
   const MAX_FALLERS = 10;
@@ -145,20 +146,22 @@
     canopy = [];
 
     const usable = baseY - padTop;
-    const trunkH = Math.min(usable * 0.36, 118);
-    grow(midX, baseY, 0, trunkH, 15, 0);
+    const trunkH = Math.min(usable * 0.36 * treeScale, 118 * treeScale);
+    const trunkW = Math.max(8, 15 * treeScale);
+    grow(midX, baseY, 0, trunkH, trunkW, 0);
 
+    const leafCount = treeScale < 0.9 ? 6 : 8;
     tips.forEach((tip) => {
-      for (let i = 0; i < 8; i++) {
+      for (let i = 0; i < leafCount; i++) {
         const a = rand(0, Math.PI * 2);
-        const d = rand(4, 16);
+        const d = rand(4, 16) * treeScale;
         canopy.push({
           x: tip.x + Math.cos(a) * d,
           y: tip.y + Math.sin(a) * d * 0.62,
-          r: rand(3, 6.5),
+          r: rand(3, 6.5) * treeScale,
           color: LEAF_PALETTE[Math.floor(rand(0, LEAF_PALETTE.length))],
           isLogo: logoDrawable() && rng() > 0.5,
-          logoSize: rand(14, 22),
+          logoSize: rand(14, 22) * treeScale,
           phase: rand(0, Math.PI * 2),
           rot: rand(-0.4, 0.4),
         });
@@ -236,11 +239,20 @@
   function resize() {
     const stageRect = stage.getBoundingClientRect();
     const treeRect = treeCol.getBoundingClientRect();
-    W = Math.max(stageRect.width, 320);
-    padTop = Math.max(56, W * 0.07);
-    padBottom = 36;
-    const treeArea = Math.max(260, Math.min(400, treeRect.width * 0.95));
+    const narrow = window.matchMedia('(max-width: 767px)').matches;
+    const xsmall = window.matchMedia('(max-width: 480px)').matches;
+
+    treeScale = xsmall ? 0.72 : narrow ? 0.82 : window.matchMedia('(max-width: 991px)').matches ? 0.9 : 1;
+
+    W = Math.max(stageRect.width, 280);
+    padTop = xsmall ? 32 : narrow ? 36 : Math.max(56, W * 0.07);
+    padBottom = xsmall ? 22 : narrow ? 24 : 36;
+
+    const treeW = Math.max(treeRect.width, xsmall ? 72 : narrow ? 84 : 200);
+    const minArea = xsmall ? 130 : narrow ? 145 : 260;
+    const treeArea = Math.max(minArea, Math.min(400, treeW * 0.88));
     H = Math.max(stageRect.height, treeArea + padTop + padBottom);
+
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = W * dpr;
     canvas.height = H * dpr;

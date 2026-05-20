@@ -145,6 +145,7 @@
 
     setActiveStop(idx);
     el.classList.add('journey-arrived');
+    revealSectionContent(el);
     isTraveling = false;
   }
 
@@ -182,7 +183,11 @@
     });
 
     setActiveStop(current);
-    sections[current]?.el?.classList.add('journey-arrived');
+    const currentEl = sections[current]?.el;
+    if (currentEl) {
+      currentEl.classList.add('journey-arrived');
+      revealSectionContent(currentEl);
+    }
   }
 
   /* ── Anchor interception ── */
@@ -208,16 +213,31 @@
   }
 
   /* ── Section arrival observer ── */
+  function revealSectionContent(sectionEl) {
+    const items = sectionEl.querySelectorAll('.reveal:not(.visible)');
+    items.forEach((el, i) => {
+      if (reduceMotion) {
+        el.classList.add('visible');
+        return;
+      }
+      const delayVar = el.style.getPropertyValue('--reveal-delay') || el.style.transitionDelay || '';
+      const delay = parseFloat(delayVar) || 0;
+      const stagger = delay > 0 ? delay * 1000 : i * 80;
+      setTimeout(() => el.classList.add('visible'), stagger);
+    });
+  }
+
   function observeSections() {
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('journey-arrived');
+            revealSectionContent(entry.target);
           }
         });
       },
-      { threshold: 0.12, rootMargin: '-8% 0px -8% 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -4% 0px' }
     );
 
     sections.forEach((s) => io.observe(s.el));
@@ -258,7 +278,11 @@
       setTimeout(() => {
         document.body.classList.remove('journey-loading');
         document.body.classList.add('journey-ready');
-        sections[0]?.el?.classList.add('journey-arrived');
+        const hero = sections[0]?.el;
+        if (hero) {
+          hero.classList.add('journey-arrived');
+          revealSectionContent(hero);
+        }
       }, 520);
     });
   }

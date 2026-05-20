@@ -111,14 +111,14 @@
 <section id="about" class="journey-section" data-journey-label="Our story">
   <div class="container">
     <div class="row align-items-center g-5">
-      <div class="col-lg-5 reveal from-left">
+      <div class="col-lg-5 reveal reveal--left">
         <div class="about-image-wrap">
           <img src="assets/vuyani.jpeg"
                alt="Life Changing Journey &mdash; holistic wellness in Durban"
                data-fallback="#29AAE0" />
         </div>
       </div>
-      <div class="col-lg-6 offset-lg-1 reveal from-right">
+      <div class="col-lg-6 offset-lg-1 reveal reveal--right">
         <span class="section-label">Our Story</span>
         <h2 class="section-title">Transforming lives through <em>holistic healing</em></h2>
         <div class="divider"></div>
@@ -149,14 +149,14 @@
 
 <section id="services" class="journey-section" data-journey-label="Pathways">
   <div class="container">
-    <header class="services-header reveal text-center">
+    <header class="services-header reveal reveal--zoom-in text-center">
       <span class="section-label">What We Offer</span>
       <h2 class="section-title">Six pathways to <em>transformation</em></h2>
       <div class="divider mx-auto"></div>
       <p class="services-intro">Each service is delivered by a dedicated practitioner or partner. Tap a pathway to explore details and book.</p>
     </header>
 
-    <div class="svc-grid reveal" id="svcGrid">
+    <div class="svc-grid" id="svcGrid" data-reveal-stagger="alternate-lr" data-reveal-step="0.09">
 
         <article class="svc-card is-open" style="--svc-color:#29AAE0" data-fallback="#29AAE0">
           <button type="button" class="svc-card-toggle" aria-expanded="true" aria-controls="svc-body-0" id="svc-tab-0">
@@ -344,13 +344,13 @@
 
 <div class="journey-bridge journey-bridge--dark" aria-hidden="true">
   <svg class="journey-bridge-svg" viewBox="0 0 1440 72" preserveAspectRatio="none">
-    <path class="journey-bridge-path" d="M0,40 C360,0 720,56 1080,24 1440,48" />
+    <path class="journey-bridge-path" d="M0,40 C360,0 720,56 1080,24 S1320,40 1440,48" />
   </svg>
 </div>
 
 <div id="journeyBanner" class="journey-section" data-journey-label="Four pillars">
   <div class="container position-relative">
-    <div class="journey-strip reveal">
+    <div class="journey-strip reveal reveal--zoom-in">
       <div class="journey-item">
         <span class="journey-num">01</span>
         <span class="journey-title">Mind</span>
@@ -380,21 +380,21 @@
 
 <section id="team" class="journey-section team-tree" data-journey-label="Guides">
   <div class="container">
-    <header class="team-tree-header text-center reveal">
+    <header class="team-tree-header text-center reveal reveal--up">
       <span class="section-label">Our People</span>
       <h2 class="section-title">Meet the <em>practitioners</em></h2>
       <div class="divider mx-auto"></div>
       <p class="team-tree-intro">Our guides grow from the same tree &mdash; connected branch by branch across every service we offer.</p>
     </header>
 
-    <div class="team-tree-stage reveal" id="teamTreeStage">
+    <div class="team-tree-stage reveal reveal--zoom-in" id="teamTreeStage">
       <div class="team-tree-canvas-wrap" aria-hidden="true">
         <canvas id="teamTreeCanvas"></canvas>
       </div>
 
       <div class="team-tree-col team-tree-col--left" id="teamTreeColLeft">
         <div class="team-tree-nodes team-tree-nodes--stack">
-        <article class="team-node reveal" data-side="left" style="--leaf-color: #29AAE0; transition-delay: .05s">
+        <article class="team-node reveal reveal--left" data-side="left" style="--leaf-color: #29AAE0; --reveal-delay: .05s">
           <div class="practitioner-card">
             <div class="prac-img-wrap">
               <img src="assets/vuyani.jpeg" alt="Vuyani Nyezi" data-fallback="#29AAE0" />
@@ -404,7 +404,7 @@
           </div>
         </article>
 
-        <article class="team-node reveal" data-side="left" style="--leaf-color: #F9A003; transition-delay: .1s">
+        <article class="team-node reveal reveal--left" data-side="left" style="--leaf-color: #F9A003; --reveal-delay: .1s">
           <div class="practitioner-card">
             <div class="prac-img-wrap">
               <img src="assets/images/life-changing-journey-spiritual.jpeg" alt="Life Changing Journey Spiritual Team" data-fallback="#F9A003" />
@@ -414,7 +414,7 @@
           </div>
         </article>
 
-        <article class="team-node reveal" data-side="left" style="--leaf-color: #DC014B; transition-delay: .15s">
+        <article class="team-node reveal reveal--left" data-side="left" style="--leaf-color: #DC014B; --reveal-delay: .15s">
           <div class="practitioner-card">
             <div class="prac-img-wrap">
               <img src="assets/images/life-changing-journey-hypnotherapy.jpeg" alt="Hypnotherapy and Life Coaching" data-fallback="#DC014B" />
@@ -430,7 +430,7 @@
 
       <div class="team-tree-col team-tree-col--right" id="teamTreeColRight">
         <div class="team-tree-nodes team-tree-nodes--stack">
-        <article class="team-node reveal" data-side="right" style="--leaf-color: #00293B; transition-delay: .2s">
+        <article class="team-node reveal reveal--right" data-side="right" style="--leaf-color: #00293B; --reveal-delay: .2s">
           <div class="practitioner-card">
             <div class="prac-img-wrap">
               <img src="assets/images/tshabalala-omkhulu-financial.jpeg" alt="Tshabalala Omhle Financial Group" data-fallback="#00293B" />
@@ -440,7 +440,7 @@
           </div>
         </article>
 
-        <article class="team-node reveal" data-side="right" style="--leaf-color: #3A7F3D; transition-delay: .25s">
+        <article class="team-node reveal reveal--right" data-side="right" style="--leaf-color: #3A7F3D; --reveal-delay: .25s">
           <div class="practitioner-card">
             <div class="prac-img-wrap">
               <img src="assets/images/life-changing-journey-integrated.jpeg" alt="Tshabalala Omkhulu" data-fallback="#3A7F3D" />
@@ -450,7 +450,7 @@
           </div>
         </article>
 
-        <article class="team-node reveal" data-side="right" style="--leaf-color: #711544; transition-delay: .3s">
+        <article class="team-node reveal reveal--right" data-side="right" style="--leaf-color: #711544; --reveal-delay: .3s">
           <div class="practitioner-card">
             <div class="prac-img-wrap">
               <img src="assets/images/nyezi-vuyani-foundation.jpeg" alt="Nyezi Vuyani Foundation" data-fallback="#711544" />
@@ -467,14 +467,14 @@
 
 <section id="testimonials" class="journey-section" data-journey-label="Stories">
   <div class="container">
-    <header class="testi-header reveal text-center">
+    <header class="testi-header reveal reveal--zoom-in text-center">
       <span class="section-label">Voices</span>
       <h2 class="section-title">What our <em>clients</em> say</h2>
       <div class="divider mx-auto"></div>
       <p class="testi-intro">Real stories from people on their transformation journey. Tap a message to read more.</p>
     </header>
 
-    <div class="testi-grid reveal" id="testiGrid">
+    <div class="testi-grid" id="testiGrid" data-reveal-stagger="alternate-zoom" data-reveal-step="0.1">
 
         <article class="testi-card is-open" data-service="psychology" style="--testi-accent:#29AAE0">
           <button type="button" class="testi-card-toggle" aria-expanded="true" aria-controls="testi-body-0" id="testi-tab-0">
@@ -560,7 +560,7 @@
 
 <section id="membership" class="journey-section" data-journey-label="Membership">
   <div class="container position-relative">
-    <div class="text-center mb-5 reveal">
+    <div class="text-center mb-5 reveal reveal--zoom-in">
       <span class="section-label">Membership</span>
       <h2 class="section-title">Choose your <em>journey</em></h2>
       <div class="divider mx-auto"></div>
@@ -570,7 +570,7 @@
     </div>
     <div class="row g-4 justify-content-center">
 
-      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.05s">
+      <div class="col-lg-4 col-md-6 reveal reveal--left" style="--reveal-delay:.05s">
         <div class="tier-card">
           <div class="tier-badge silver">Silver</div>
           <div class="tier-price"><sup>R</sup>100</div>
@@ -588,7 +588,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.1s">
+      <div class="col-lg-4 col-md-6 reveal reveal--zoom-in" style="--reveal-delay:.1s">
         <div class="tier-card featured">
           <div class="tier-badge gold">Gold</div>
           <div class="tier-price"><sup>R</sup>299</div>
@@ -606,7 +606,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 reveal" style="transition-delay:.15s">
+      <div class="col-lg-4 col-md-6 reveal reveal--right" style="--reveal-delay:.15s">
         <div class="tier-card">
           <div class="tier-badge plat">Platinum</div>
           <div class="tier-price"><sup>R</sup>599</div>
@@ -630,7 +630,7 @@
 
 <div id="cta" class="journey-section" data-journey-label="Take the step">
   <div class="container">
-    <div class="cta-inner reveal">
+    <div class="cta-inner reveal reveal--zoom-out">
       <h2 class="cta-title">Your journey begins<br><em>today.</em></h2>
       <p class="cta-sub">One conversation can change everything. Reach out and take the first step.</p>
       <div class="d-flex flex-wrap gap-3 justify-content-center">
@@ -646,7 +646,7 @@
 <section id="contact" class="journey-section" data-journey-label="Connect">
   <div class="container">
     <div class="row g-5">
-      <div class="col-lg-5 reveal from-left">
+      <div class="col-lg-5 reveal reveal--left">
         <span class="section-label">Get In Touch</span>
         <h2 class="section-title">We would love to<br><em>hear from you</em></h2>
         <div class="divider"></div>
@@ -691,7 +691,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 offset-lg-1 reveal from-right">
+      <div class="col-lg-6 offset-lg-1 reveal reveal--right">
         <form id="contactForm">
           <div class="row g-2">
             <div class="col-12 col-md-6">
@@ -725,7 +725,7 @@
 <footer>
   <div class="container">
     <div class="row g-5">
-      <div class="col-lg-4 reveal">
+      <div class="col-lg-4 reveal reveal--up">
         <div class="footer-brand">Life Changing <span>Journey</span></div>
         <p class="footer-tagline" style="margin-bottom:1.8rem">Holistic transformation rooted in Ubuntu.</p>
         <div class="social-row">
@@ -736,7 +736,7 @@
           <a href="https://wa.me/27658460441" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
-      <div class="col-lg-2 col-6 reveal" style="transition-delay:.1s">
+      <div class="col-lg-2 col-6 reveal reveal--left" style="--reveal-delay:.1s">
         <div class="footer-heading">Services</div>
         <ul class="footer-links">
           <li><a href="#services">Psychology</a></li>
@@ -747,7 +747,7 @@
           <li><a href="#services">Foundation</a></li>
         </ul>
       </div>
-      <div class="col-lg-2 col-6 reveal" style="transition-delay:.15s">
+      <div class="col-lg-2 col-6 reveal reveal--right" style="--reveal-delay:.15s">
         <div class="footer-heading">Company</div>
         <ul class="footer-links">
           <li><a href="#about">About Us</a></li>
@@ -758,7 +758,7 @@
           <li><a href="https://www.lifechangingjourney.co.za" target="_blank" rel="noopener noreferrer">Website</a></li>
         </ul>
       </div>
-      <div class="col-lg-4 reveal" style="transition-delay:.2s">
+      <div class="col-lg-4 reveal reveal--zoom-in" style="--reveal-delay:.2s">
         <div class="footer-heading">Newsletter</div>
         <p style="font-size:.82rem;color:rgba(255,255,255,.4);line-height:1.8;margin-bottom:1.2rem;">
           Receive insights, event invites, and transformation resources.
@@ -789,6 +789,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/scroll-reveal.js"></script>
 <script src="js/journey.js"></script>
 <script src="js/team-tree.js"></script>
 </body>
