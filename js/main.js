@@ -187,7 +187,7 @@ document.querySelectorAll('img[data-fallback]').forEach((img) => {
     const card = this.closest('.svc-card');
 
     if (media) {
-      media.style.background = `linear-gradient(135deg, ${color}, #001a24)`;
+      media.style.background = `linear-gradient(135deg, ${color}, #29AAE0)`;
       this.style.display = 'none';
     } else if (this.closest('.svc-card-thumb')) {
       this.style.display = 'none';
@@ -197,7 +197,7 @@ document.querySelectorAll('img[data-fallback]').forEach((img) => {
         thumb.innerHTML = '<i class="bi bi-image" aria-hidden="true"></i>';
       }
     } else {
-      this.style.background = `linear-gradient(135deg, ${color}, #001a24)`;
+      this.style.background = `linear-gradient(135deg, ${color}, #29AAE0)`;
       this.style.minHeight = this.classList.contains('service-card-img') ? '180px' : '100%';
     }
 
